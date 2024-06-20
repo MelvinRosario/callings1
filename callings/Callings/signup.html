@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<title>Sign-up</title>
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+<style>
+
+@charset "UTF-8";
+.oai-header img {
+ display:flex;
+ height:32px;
+ width:32px;
+ background-color:#fff;
+ padding:32px 0 0;
+ fill:#202123
+}
+body {
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        background: linear-gradient(to right,#e8e2f2,#927ecf) ;
+      }
+      :root {
+        --main-bg-color: #e8e2f2;
+        --main-color: #927ecf;
+      }
+
+.select-active {
+    border-color: var(--main-color);
+}
+
+a {
+ font-weight:400;
+ text-decoration:inherit;
+ color:#6A64F1
+}
+.main-container {
+ height: 100vh;
+ box-sizing:border-box;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width:100%;
+ /* margin: 100px 0; */
+}
+.login-container {
+ background-color:#fff;
+ padding:0 -1px 40px;
+ border-radius:3px;
+ box-shadow:none;
+ width:320px;
+ box-sizing:content-box;
+ flex-shrink:0
+}
+.title-wrapper {
+ padding:40px 40px 24px;
+ box-sizing:content-box
+}
+.title {
+ font-size:30px;
+ font:"Söhne";
+ margin:24px 0 0;
+ color:#2d333a;
+ width:320px;
+ text-align:center
+}
+.subtitle {
+ font-size:24px;
+ font:"Söhne";
+ margin:24px 0 0;
+ color:#2d333a;
+ text-align:center
+}
+.sso-list {
+ margin-top:8px
+}
+.sso-option {
+ padding:0 12px
+}
+.input-wrapper {
+ position:relative;
+ margin-bottom:25px;
+ width:320px;
+ box-sizing:content-box
+}
+.email-input {
+ -webkit-appearance:none;
+ -moz-appearance:none;
+ appearance:none;
+ background-color:#fff;
+ border:1px solid #d9d9d9;
+ border-radius:10px;
+ box-sizing:border-box;
+ color: #000 !important;
+ font-family:inherit;
+ font-size:16px;
+ height:55px;
+ line-height:1.1;
+ outline:none;
+ padding-block:1px;
+ padding-inline:2px;
+ padding:0 16px;
+ transition:box-shadow .2s ease-in-out,border-color .2s ease-in-out;
+ width:100%;
+ text-rendering:auto;
+ letter-spacing:normal;
+ word-spacing:normal;
+ text-transform:none;
+ text-indent:0;
+ text-shadow:none;
+ display:inline-block;
+ text-align:start;
+ margin:0
+}
+select{
+ -webkit-appearance:none;
+ -moz-appearance:none;
+ appearance:none;
+ background-color:#fff;
+ border:1px solid #d9d9d9;
+ border-radius:6px;
+ box-sizing:border-box;
+ color:var(--main-color);
+ font-family:inherit;
+ font-size:16px;
+ height:52px;
+ line-height:1.1;
+ outline:none;
+ padding-block:1px;
+ padding-inline:2px;
+ padding:0 16px;
+ transition:box-shadow .2s ease-in-out,border-color .2s ease-in-out;
+ width:100%;
+ text-rendering:auto;
+ letter-spacing:normal;
+ word-spacing:normal;
+ text-transform:none;
+ text-indent:0;
+ text-shadow:none;
+ display:inline-block;
+ text-align:start;
+ margin:0
+}
+select option:active{
+    background: var(--main-color);
+}
+.email-input:focus,
+.email-input:valid {
+ border:1px solid var(--main-color);
+ outline:none
+}
+.email-input:focus-within {
+ box-shadow:1px #6A64F1
+}
+.email-input:focus+.email-label,
+.email-input:valid+.email-label {
+  font-size: 14px;
+    top: 0;
+    left: 10px;
+    border-radius: 7px; 
+    color: var(--main-color); 
+    background-color: #fff;
+}
+.email-input.error {
+ border:1px solid #d00e17
+}
+.email-input.error+.email-label {
+ color:#d00e17
+}
+.email-label {
+ position:absolute;
+ top:26px;
+ left:16px;
+ background-color:#fff;
+ color: #000;
+ font-size:16px;
+ font-weight:400;
+ margin-bottom:8px;
+ max-width:90%;
+ overflow:hidden;
+ pointer-events:none;
+ padding:1px 6px;
+ text-overflow:ellipsis;
+ transform:translateY(-50%);
+ transform-origin:0;
+ transition:transform .15s ease-in-out,top .15s ease-in-out,padding .15s ease-in-out;
+ white-space:nowrap;
+ z-index:1
+}
+.invalid-email-error-message {
+ color:#d00e17;
+ display:none
+}
+.invalid-email-error-message.visible {
+ display:block
+}
+
+.continue-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    background: var(--main-color);
+    color: #fff;
+    margin: 15px 0 0;
+    border-radius: 6px;
+    padding: 11px;
+    font: inherit;
+    border-width: 0;
+    cursor: pointer;
+}
+.continue-btn:hover {
+ box-shadow:inset 0 0 0 150px #0000001a
+}
+.otp-link-btn {
+ width:100%;
+ color:#6A64F1;
+ text-align:center;
+ font-size:14px;
+ font-style:normal;
+ align-self:stretch;
+ margin-top:10px;
+ margin-bottom:0;
+ background:none;
+ border:none;
+ cursor:pointer;
+ justify-content:center
+}
+.otp-link-btn:disabled {
+ color:gray;
+ cursor:not-allowed
+}
+.other-page {
+ text-align:center;
+ margin-top:16px;
+ margin-bottom:0;
+ font-size:14px;
+ width:320px
+}
+.other-page-link {
+ padding:4px;color: #fff;
+font-size: 20px;
+}
+.divider-wrapper {
+ display:flex;
+ flex-direction:row;
+ text-transform:uppercase;
+ border:none;
+ font-size:12px;
+ font-weight:400;
+ margin:0;
+ padding:24px 0 0;
+ align-items:center;
+ justify-content:center;
+ width:320px;
+ vertical-align:baseline
+}
+.divider-wrapper:before,
+.divider-wrapper:after {
+ content:"";
+ border-bottom:1px solid #c2c8d0;
+ flex:1 0 auto;
+ height:.5em;
+ margin:0
+}
+.divider {
+ text-align:center;
+ flex:.2 0 auto;
+ margin:0;
+ height:12px
+}
+.social-section {
+ margin-top:24px
+}
+.social-btn,
+.sso-option {
+ position:relative;
+ width:320px;
+ border:1px solid #c2c8d0;
+ border-radius:6px;
+ font-size:16px;
+ align-items:center;
+ background-color:#fff;
+ height:52px;
+ transition:box-shadow .15 ease-in-out,background-color .15s ease-in-out;
+ cursor:pointer;
+ color:#2d333a;
+ margin-bottom:8px;
+ display:flex;
+ outline:0
+}
+.social-btn {
+ padding:0 8px 0 52px
+}
+.social-btn:hover {
+ box-shadow:inset 0 0 0 150px #0000001a
+}
+.social-btn:focus {
+ outline:none
+}
+.social-logo-wrapper {
+ position:absolute;
+ left:26px;
+ top:50%;
+ transform:translate(-50%) translateY(-50%)
+}
+.social-logo {
+ width:20px;
+ height:20px;
+ display:inline-block
+}
+.social-text {
+ text-align:left;
+ position:relative
+}
+.oai-footer {
+ text-align:center;
+ padding:12px 0 24px;
+ font-size:14px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ color:#6e6e80;
+ flex:0 0 auto
+}
+.separator:before {
+ content:" | ";
+ margin:0 8px
+}
+:root {
+ font-family:Söhne,-apple-system,BlinkMacSystemFont,Helvetica,sans-serif;
+ line-height:1.5;
+ font-weight:400;
+ font-synthesis:none;
+ text-rendering:optimizeLegibility;
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale
+}
+.page-wrapper {
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ min-height:100%,;
+ height: 100vh;
+}
+.oai-header {
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ width:100%;
+ background-color:#fff
+}
+.oai-header img {
+ display:flex;
+ height:70px;
+ width:250px;
+ background-color:#fff;
+ padding:64px 0 0;
+ fill:#202123
+}
+body {
+ background-color:#fff;
+ display:block;
+ margin:0
+}
+.token-container {
+ display:flex;
+ justify-content:center;
+ width:100%;
+ margin-top:24px
+}
+.content-wrapper {
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ width:100%;
+ height:auto;
+ /* border: 1px solid black; */
+}
+.cta-btn {
+ position:relative;
+ height:52px;
+ width:160px;
+ background-color:#6A64F1;
+ color:#fff;
+ margin:48px 0 0;
+ align-items:center;
+ justify-content:center;
+ display:flex;
+ border-radius:6px;
+ padding:4px 16px;
+ font:inherit;
+ border-width:0px
+}
+.cta-btn:hover {
+ box-shadow:inset 0 0 0 150px #0000001a;
+ cursor:pointer
+}
+.cta-btn.sign-in {
+ margin-top:120px;
+ width:240px
+}
+.token-wrapper {
+ display:flex;
+ align-items:center
+}
+.token-box {
+ width:420px;
+ background-color:#f0f0f0;
+ padding:0 16px;
+ border-radius:6px;
+ border:1px solid #c2c8d0;
+ margin-right:16px;
+ font-family:monospace
+}
+.token-box-inner {
+ overflow-x:auto;
+ scrollbar-width:none;
+ -ms-overflow-style:none
+}
+.token-box-inner::-webkit-scrollbar {
+ display:none
+}
+.token-display {
+ white-space:nowrap
+}
+.copy-btn {
+ position:relative;
+ border:1px solid #c2c8d0;
+ border-radius:6px;
+ font-size:16px;
+ align-items:center;
+ background-color:#fff;
+ height:52px;
+ transition:box-shadow .15 ease-in-out,background-color .15s ease-in-out;
+ cursor:pointer;
+ padding:0 16px;
+ color:#2d333a;
+ display:flex;
+ outline:0
+}
+.copy-btn:hover {
+ box-shadow:inset 0 0 0 150px #0000001a
+}
+.copy-btn:focus {
+ outline:none
+}
+.copy-confirm {
+ margin-left:10px;
+ color:#6A64F1
+}
+.copy-confirm.hidden {
+ visibility:hidden
+}
+.overlay {display:none;}
+@media only screen and (max-width: 768px) {
+   .oai-header img {
+  display: flex;
+  height: 70px;
+  width: 80%;
+   }
+/* Styles for the overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6A64F1; /* semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* ensure it's on top of everything */
+  }
+
+  /* Styles for the content */
+  .content {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+  }
+
+  /* Keyframe animation */
+  @keyframes bounce {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+}
+
+
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background: var(--main-color);
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 10px;
+  width:  10px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: var(--main-color);
+}
+.card{
+    border-radius: 20px;
+}
+.main-container .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 100px 0;
+}
+.lottie{
+    height: 80%;
+}
+
+.imgupload {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .picture-container {
+        position: relative;
+        cursor: pointer;
+        margin: 0px auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .picture-container .form-label {
+        font-size: 17px;
+        margin-top: 10px;
+        font-weight: 500;
+        text-align: center;
+        border: 2px solid #e6e9ec;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    .picture-container .form-label {
+        font-size: 17px;
+        margin-top: 10px;
+        font-weight: 500;
+        text-align: center;
+        border: 2px solid #e6e9ec;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    
+    .picture {
+        width: 106px;
+        height: 106px;
+        /* background-color: #999999; */
+        border: 2px solid #b3b3b6;
+        /* background-position: center center;
+        background-size: cover; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+    }
+    .picture img {
+        text-align: center;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .picture input[type="file"] {
+        cursor: pointer;
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0 !important;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .picture-src {
+        width: 100%;
+    }
+    @media only screen and (max-width: 768) {
+    .card{
+    margin: 50px 0 !important;
+}
+      }
+    @media only screen and (max-width: 375px) {
+    .main-container .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    /* margin: 50px 0; */
+}
+
+      }
+
+</style>
+<style>
+  .profile-badge {
+     display: flex;
+     justify-content: center;
+     position: relative;
+  }
+
+  .profile-pic {
+      position: relative;     
+      z-index: 1;
+      padding: 20px;
+  }
+
+  .profile-pic img {
+      border-radius: 50%;
+      box-shadow: 0px 0px 5px 0px #c1c1c1;
+      cursor: pointer;
+      width: 150px;
+      height: 150px;
+      padding: 2px;
+      border: 2px solid var(--main-color);
+  }
+  .profile-badge i {
+    color: var(--main-color);
+    font-size: 27px;
+    position: absolute;
+    top: 26px;
+    right: 25px;
+}
+
+
+</style>
+    </head>
+    <body>
+    
+            
+        
+ 
+
+
+  <div class="page-wrapper" id="mainContent">
+   <!-- <header class="oai-header"><img src="{{env('APP_URL')}}/logo.png" alt="OpenAI Logo"></header> -->
+   <main class="main-container">
+    <div class="card">
+        <section class="content-wrapper">
+            <div class="title-wrapper">
+                <!-- <div class="lottie">
+                    <lottie-player src="img/animatedlog.json" background="transparent"  speed="1"  style="width: 100%;" loop  autoplay></lottie-player>
+                  </div> -->
+            </div>
+            <form id="regForm" action="">
+           <div class="tab">
+            <div class="profile-badge">
+              <div class="profile-pic">
+                  <img alt="User Pic" src="img/Previewimg.png"
+                      id="profile-image1" height="200">
+                  <input id="profile-image-upload" name="profile_photo" style="display: none" class="hidden"
+                      type="file" onchange="previewFile()">
+                  <div style="color:#999;"></div>
+                  <i class="fa-solid fa-circle-plus"></i>
+              </div>
+              <span class="invalid-feedback" role="alert" id="error-profile_photo"></span>
+          </div>
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <input class="email-input " inputmode="email" type="text"  name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required="" placeholder="">
+                           <label class="email-label" for="email-input">Name </label>
+                   </div></div>
+               </p>
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <input class="email-input "  type="date"  name="usermobile" autocomplete="username" autocapitalize="none" spellcheck="false" required="" placeholder="">
+                       <label class="email-label" for="email-input">Date of birth  </label>
+                   </div></div>
+               </p>
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <input class="email-input "  type="text"  name="usermobile" autocomplete="username" autocapitalize="none" spellcheck="false" required="" placeholder="">
+                       <label class="email-label" for="email-input">Location </label>
+                   </div>
+                  </div>
+               </p>
+           </div>
+           <div class="tab">
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <input class="email-input " inputmode="email" type="text"  name="userage" autocomplete="username" autocapitalize="none" spellcheck="false" required="" placeholder="">
+                           <label class="email-label" for="email-input">Age </label>
+                   </div></div>
+               </p>
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <select name="" id="select" style="width: 100%;">
+                           <option value="" disabled selected>Status</option>
+                           <option value="">Single</option>
+                           <option value="">Married</option>
+                           <option value="">Divorced</option>
+                       </select>
+                   </div></div>
+               </p>
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <select name="" id="select2" style="width: 100%;">
+                           <option value="" disabled selected>Gender</option>
+                           <option value="">Male</option>
+                           <option value="">Female</option>
+                           <option value="">Transgender</option>
+                       </select>
+                   </div></div>
+               </p>
+               <p><div class="login-container">
+                   <div class="input-wrapper">
+                       <input class="email-input " inputmode="email" type="number"  name="userage" autocomplete="username" autocapitalize="none" spellcheck="false" required="" placeholder="">
+                           <label class="email-label" for="email-input">+91 </label>
+                   </div></div>
+               </p>
+           </div>                      
+           <div style="text-align:center;margin-top:40px;">
+       <span class="step"></span>
+       <span class="step"></span>
+       
+     </div>
+     <div class="my-3">
+        <button class="continue-btn" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button  class="continue-btn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>   
+     </div>
+            
+   </form>
+         </section>
+    </div>
+      
+   </main>
+   <!-- <footer class="oai-footer"><a href="">Terms of Use</a><span class="separator"></span><a href="">Privacy Policy</a></footer> -->
+</div>
+<!-- script for image upload -->
+<script>
+  function previewFile() {
+      var preview = document.querySelector('img');
+      var file = document.querySelector('input[type=file]').files[0];
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function() {
+          preview.src = reader.result;
+      }, false);
+
+      if (file) {
+          reader.readAsDataURL(file);
+      }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+      var profileImage = document.getElementById('profile-image1');
+      var fileInput = document.getElementById('profile-image-upload');
+
+      profileImage.addEventListener('click', function() {
+          fileInput.click();
+      });
+  });
+</script>
+<!-- end -->
+<script>
+    // JavaScript to change the border color on click
+    document.getElementById('select').addEventListener('click', function() {
+            this.style.borderColor = 'var(--main-color)';
+        });
+         // JavaScript to change the border color on click
+    document.getElementById('select2').addEventListener('click', function() {
+            this.style.borderColor = 'var(--main-color)';
+        });
+</script>
+<script>
+
+let currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the crurrent tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  const x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n === 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n === (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  const x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n === 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  let x;
+
+  let y;
+  let i;
+  let valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value === "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  let i;
+
+  const x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    </body>
+</html>

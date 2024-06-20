@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- important links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        background-image: url("img/telegram.png");
+        background-repeat: repeat;
+        background-size: 100%;
+      }
+
+      .centercontent {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .iconcss i {
+        font-size: 22px;
+      }
+      .nav-center {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 0 !important;
+      }
+      .nav-center img {
+        width: 50px;
+        border-radius: 50%;
+        padding: 0.0625rem 0 0.0625rem 0.0625rem;
+      }
+      .col-2 {
+        flex: 0 0 auto;
+        width: 9.666667% !important;
+      }
+      .centercontent h3 {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+        white-space: pre;
+        margin: 0 !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .subcount {
+        font-size: 14px;
+        line-height: 1.125rem;
+        margin: 0;
+        font-weight: 400;
+        color: #dce2e6 !important;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+      .dates {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 7px 0;
+      }
+      .dates span {
+        display: inline-block;
+        background: rgb(150, 147, 147);
+        opacity: 0.7;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        line-height: 1.75;
+        padding: 0 0.6rem;
+        border-radius: 20px;
+        word-break: break-word;
+        position: relative;
+        z-index: 0;
+      }
+      .minicard {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        padding: 10px;
+        background-color: #fff;
+        max-width: 65%;
+        border-radius: 22px 22px 22px 5px;
+        margin-top: 20px;
+      }
+      .miniuser {
+        text-decoration: none;
+        font-weight: 500;
+        color: rgb(12, 179, 12);
+      }
+      .minimessage {
+        color: #5a5c5e;
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .ratingemojis {
+        display: flex;
+      }
+      .ratingemojis a {
+        text-decoration: none;
+        display: inline-block;
+        background-color: #dfecf1;
+        border-radius: 10px;
+        margin: 10px 5px;
+        padding: 2px 5px;
+      }
+      .ratingemojis span {
+        color: #0088cc;
+        font-weight: 500;
+      }
+      .heart {
+        font-size: 20px !important;
+        color: red !important;
+      }
+      .likesbox {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        margin-top: -5px !important;
+      }
+      .likesbox i {
+        color: #a3a5a7;
+        font-size: 15px;
+        font-weight: 400;
+      }
+      .likesbox span {
+        color: #a3a5a7;
+        font-size: 15px;
+        font-weight: 400;
+      }
+      .share {
+        position: absolute;
+        left: 275px;
+        bottom: 15px;
+        text-decoration: none;
+      }
+      .share2 {
+        position: absolute;
+        left: 315px;
+        bottom: 15px;
+      }
+      .share i {
+        color: #fff;
+        display: inline-block;
+        background-color: #898b8d;
+        padding: 8px;
+        font-size: 20px;
+        border-radius: 50%;
+        opacity: 0.7;
+      }
+      .share2 i {
+        color: #fff;
+        display: inline-block;
+        background-color: #898b8d;
+        padding: 8px;
+        font-size: 20px;
+        border-radius: 50%;
+        opacity: 0.7;
+      }
+      .bigcard {
+        max-width: 75%;
+        background-color: #fff;
+        border-radius: 5px 22px 22px 22px;
+        margin-top: 2px;
+        padding: 5px;
+      }
+      .bigcard2 {
+        max-width: 75%;
+        background-color: #fff;
+        border-radius: 5px 22px 22px 22px;
+        margin: 2px 0 80px 0;
+        padding: 5px;
+      }
+      .narutoheading {
+        margin: 10px 5px 15px 5px;
+        flex-wrap: wrap;
+      }
+      .narutoimg {
+        width: 100% !important;
+        height: 180px !important;
+        border-radius: 22px 22px 0px 0px !important;
+      }
+      .narutoheading h5 {
+        font-size: 23px;
+      }
+      .narutoheading span {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .topics {
+        display: flex;
+        flex-direction: column;
+      }
+      .topics h5::before {
+        content: "🔥";
+        font-size: 15px;
+      }
+      .elist {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 5px;
+      }
+      .elist a {
+        text-decoration: none;
+        color: #0088cc;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .elist a {
+        margin: 10px 0;
+      }
+      .elist .add::before {
+        content: "❤️";
+      }
+      .elist .even::before {
+        content: "🔥";
+      }
+      .ansbuttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .join {
+        width: 100%;
+        padding: 15px;
+        background: #fff;
+        border: none;
+        border-top: 1px solid rgb(207, 205, 205) !important;
+        color: #0088cc;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 !important;
+      }
+      .scroll {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+      }
+      .scroll i {
+        position: absolute;
+        right: 8px;
+        bottom: 25px;
+        color: #0088cc;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      .navy {
+        position: fixed !important;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+      }
+      /* grid images */
+
+      .myImg {
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+        padding: 2px 5px;
+        height: 100px;
+      }
+
+      .myImg:hover {
+        opacity: 0.7;
+      }
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+      }
+
+      /* Modal Content (image) */
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      /* Caption of Modal Image */
+      #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        font-size: 25px;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      }
+
+      /* Add Animation */
+      .modal-content,
+      #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+      }
+
+      @-webkit-keyframes zoom {
+        from {
+          -webkit-transform: scale(0);
+        }
+        to {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* The Close Button */
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .fourpics {
+        display: grid;
+        width: 100%;        
+        grid-template-columns: 1fr 1fr;
+      }
+      .download{
+        text-decoration: none;
+        color: #0088cc;
+        font-size: 20px;
+        margin: 0 10px;
+      }
+      /* end */
+      /* .elist a:nth-child(add)::before{
+                    
+                    }
+                    .elist a:nth-child(even)::before{
+                     content: '🔥';
+                    } */
+      @media only screen and (max-width: 700px) {
+
+        .modal-content {
+          width: 80%;
+          height: auto;
+        }
+        .myImg {
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;        
+        max-width: 100%;
+        /* padding: 2px 5px; */
+        height: 120px;
+      }
+
+      }
+
+      @media only screen and (max-width: 375px) {
+        .minicard {
+          max-width: 80%;
+        }
+        
+        .share2 {
+          position: absolute;
+          left: 270px;
+          bottom: 15px;
+        }
+        .narutoheading span {
+          font-size: 15px;
+          font-weight: 500;
+        }
+        .scroll i {
+          right: 7px;
+          bottom: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 5rem">
+      <div class="row navy" style="background-color: #0088cc; padding: 10px 0">
+        <div class="col-12" style="color: #fff">
+          <div
+            class="row d-flex"
+            style="display: flex; justify-content: space-around"
+          >
+            <div
+              class="col-2 d-flex align-items-center justify-content-center iconcss"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="col-8 nav-center">
+              <img src="img/callingsicon.jpg" alt="" />
+              <div class="centercontent mx-2">
+                <h3>Callings</h3>
+                <span class="subcount">170.1K subscribers</span>
+              </div>
+            </div>
+            <div
+              class="col-2 d-flex align-items-center justify-content-flex-end iconcss"
+            >
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- dates -->
+      <div class="row mt-3">
+        <div class="col-12 dates">
+          <span>September 12</span>
+        </div>
+        <div class="col-12 dates">
+          <span>Channel created</span>
+        </div>
+        <div class="col-12 dates">
+          <span>October 21</span>
+        </div>
+      </div>
+      <!-- end-->
+
+      <!-- minicard -->
+      <div class="row">
+        <div class="col-12 d-flex align-items-end" style="position: relative">
+          <div class="minicard">
+            <a class="miniuser" href="">Anime LeGo</a>
+            <span class="minimessage">Completed Shippuden last episode</span>
+            <div class="ratingemojis">
+              <a href="">&#128293;<span style="margin-right: 5px">128</span></a>
+              <a href="">&#x1F44D;<span style="margin-right: 5px">215</span></a>
+              <a href=""
+                ><span class="mx-1" style="color: red">&hearts;</span
+                ><span style="margin-right: 5px">189</span></a
+              >
+            </div>
+            <div class="likesbox">
+              <i class="fa-solid fa-eye"></i>
+              <span class="mx-1">6k</span>
+              <span class="mx-1">8.58 AM</span>
+            </div>
+          </div>
+          <a class="share">
+            <i class="fa-solid fa-share"></i>
+          </a>
+        </div>
+      </div>
+      <!-- end -->
+      <!-- image with narration -->
+      <div class="row">
+        <div class="col-12">
+          <div class="bigcard" style="position: relative">
+            <div class="col-12">
+              <img class="narutoimg myImg" src="img/naruto2.jpg" alt="naruto" />
+            </div>
+            <div class="d-flex align-items-center narutoheading">
+              <h5>Naruto | <span class="mx-2">Naruto Shippuden</span></h5>
+              
+            </div>
+            <div class="topics">
+              <h5>Ratings: 80</h5>
+              <h5>Status: Completed</h5>
+              <h5>Quality: Multi[Dual]</h5>
+              <h5>
+                Genres: Action, Adventure, Comedy, Drama, Fantasy, Supernatural
+              </h5>
+            </div>
+
+            <div class="topics2">
+              <h5 class="" style="display: flex; flex-direction: row">
+                Synoposis : Nauto Uzumaki, a hyperactive and knuckle-headed
+                ninja, lives in Konohagakure .....
+                <h5 id="dots"></h5>
+                <h5 id="more" style="display: none">
+                  A powerful fox known as the Nine-Tails attacks Konoha, the
+                  hidden leaf village in the Land of Fire, one of the Five Great
+                  Shinobi Countries in the Ninja World. In response, the leader
+                  of Konoha and the Fourth Hokage, Minato Namikaze, at the cost
+                  of his life, seals the fox inside the body of his newborn son,
+                  Naruto Uzumaki, making him a host of the beast.[i] The Third
+                  Hokage returns from retirement to become the leader of Konoha
+                  again.
+                </h5>
+                <h5
+                  class="mx-1"
+                  onclick="myFunction()"
+                  id="myBtn"
+                  style="color: #0088cc; font-weight: 600"
+                >
+                  Read more
+                </h5>
+              </h5>
+              <div class="ratingemojis">
+                <a href=""
+                  >&#x1F44D;<span style="margin-right: 5px">1.7k</span></a
+                >
+                <a href=""
+                  >&#128293;<span style="margin-right: 5px">8k</span></a
+                >
+                <a href=""
+                  ><span class="mx-1" style="color: red">&hearts;</span
+                  ><span style="margin-right: 5px">22k</span></a
+                >
+              </div>
+            </div>
+            <a href="#" class="share2">
+              <i class="fa-solid fa-share"></i>
+            </a>
+            <div class="likesbox" style="padding: 10px;">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mx-1">59K</span>
+                <span class="mx-1">11.30 AM</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="bigcard" style="position: relative">
+            <div class="col-12">
+              <div class="fourpics">
+                <img
+                  class="myImg"
+                  src="img/narutog1.jpg"
+                  alt="Naruto"
+                  style=""
+                />
+                <img
+                  class="myImg"
+                  src="img/narutog2.jpg"
+                  alt="Naruto Shippuden"
+                  style=""
+                />
+                <img
+                  class="myImg"
+                  src="img/narutog3.jpg"
+                  alt="Logo"
+                  style=""
+                />
+                <img
+                  class="myImg"
+                  src="img/narutog4.jpg"
+                  alt="Uzumaki"
+                  style=""
+                />
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01" />
+                <div id="caption"></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center narutoheading">
+              <h5>Naruto Shippuden Full Episodes<a href="#" class="download">Download here</a></h5>              
+            </div>
+            <div class="topics">
+              <h5>Ratings: 80</h5>
+              <h5>Status: Completed</h5>
+              <h5>Quality: Multi[Dual]</h5>
+              <h5>
+                Genres: Action, Adventure, Comedy, Drama, Fantasy, Supernatural
+              </h5>
+            </div>
+
+            <div class="topics2">              
+              <div class="ratingemojis">
+                <a href=""
+                  >&#x1F44D;<span style="margin-right: 5px">1.7k</span></a
+                >
+                <a href=""
+                  >&#128293;<span style="margin-right: 5px">8k</span></a
+                >
+                <a href=""
+                  ><span class="mx-1" style="color: red">&hearts;</span
+                  ><span style="margin-right: 5px">22k</span></a
+                >
+              </div>
+            </div>
+            <a href="#" class="share2">
+              <i class="fa-solid fa-share"></i>
+            </a>
+            <div class="likesbox" style="padding: 10px;">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mx-1">65K</span>
+                <span class="mx-1">1.00 PM</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12 dates">
+          <span>November 17</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="bigcard2" style="position: relative">
+            <h5 style="padding: 5px 10px">Anime Index</h5>
+            <div class="elist">
+              <a class="add" href="">Naruto</a>
+              <a class="even" href="">Boruto</a>
+              <a class="add" href="">Demon Slayer</a>
+              <a class="even" href="">Death Note</a>
+              <a class="add" href="">Attack of Titans</a>
+              <a class="even" href="">Bleach</a>
+              <a class="add" href="">One Piece</a>
+            </div>
+            <a href="#" class="share2">
+              <i class="fa-solid fa-share"></i>
+            </a>
+            <div class="likesbox" style="padding: 10px;">
+                <i class="fa-solid fa-eye"></i>
+                <span class="mx-1">12K</span>
+                <span class="mx-1">5.00 PM</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex">
+          <div class="ansbuttons">
+            <div class="scroll">
+              <i class="fa-solid fa-angle-down fa-lg scrolldown"></i>
+            </div>
+            <button class="join">JOIN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- click to down button -->
+    <script>
+      document
+        .querySelector(".scrolldown")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        });
+    </script>
+    <!-- end -->
+    <!-- readmore  -->
+    <script>
+      function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+        }
+      }
+    </script>
+
+    <!-- end -->
+
+    <!-- grid images script  -->
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the modal image and caption elements
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+
+      // Get all images with class "myImg" and set up click event listeners
+      var images = document.getElementsByClassName("myImg");
+      for (var i = 0; i < images.length; i++) {
+        images[i].onclick = function () {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        };
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+    </script>
+
+    <!-- end -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

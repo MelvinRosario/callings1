@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recorder</title>
+    <style>
+        .controls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voice Recorder</h1>
+    <div class="controls">
+        <button id="startRecord">Start Recording</button>
+        <button id="stopRecord" disabled>Stop Recording</button>
+        <button id="playRecord" disabled>Play Recording</button>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+    <script src="script.js"></script>
+</body>
+<script>
+  let audioChunks = [];
+let recorder;
+
+const startRecordButton = document.getElementById('startRecord');
+const stopRecordButton = document.getElementById('stopRecord');
+const playRecordButton = document.getElementById('playRecord');
+const audioPlayer = document.getElementById('audioPlayer');
+
+// Request access to the microphone
+navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+        recorder = new MediaRecorder(stream);
+
+        recorder.ondataavailable = e => {
+            audioChunks.push(e.data);
+        };
+
+        recorder.onstop = () => {
+            // Convert audio chunks to a Blob and create a URL for the audio element
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            audioPlayer.src = URL.createObjectURL(audioBlob);
+            audioPlayer.controls = true;
+            playRecordButton.disabled = false;
+        };
+    })
+    .catch(err => {
+        console.error('Permission to access microphone denied or error occurred: ', err);
+    });
+
+// Event listeners for buttons
+startRecordButton.addEventListener('click', () => {
+    audioChunks = [];
+    recorder.start();
+    startRecordButton.disabled = true;
+    stopRecordButton.disabled = false;
+});
+
+stopRecordButton.addEventListener('click', () => {
+    recorder.stop();
+    startRecordButton.disabled = false;
+    stopRecordButton.disabled = true;
+    playRecordButton.disabled = true;
+});
+
+playRecordButton.addEventListener('click', () => {
+    audioPlayer.play();
+});
+
+</script>
+</html>

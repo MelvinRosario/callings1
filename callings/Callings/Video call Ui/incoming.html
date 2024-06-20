@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        :root {
+        --main-bg-color: #e8e2f2;
+        --main-color: #927ecf;
+      }
+      .na
+      /* loader animation */
+      .loader {
+        width: 40px;
+        height: 40px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: green;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;       
+        position: relative;
+      }
+      
+
+      /* end */
+      body {
+    background: linear-gradient(to right, #d9d1e6, #927ecf);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+      img {
+        width: 100px;
+        height: 100%;
+        border-radius: 50%;
+      }
+      .profileimg {
+        margin-top: 80px;
+        flex-direction: column;
+        text-align: center;
+      }
+      .profileimg span {
+        color: #fff;
+        font-family: sans-serif;
+        letter-spacing: 0.5px;
+      }
+      .profileimg span:nth-child(2) {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+      .profileimg span:nth-child(3) {
+        font-size: 17px;
+        font-weight: lighter;
+        margin-top: 7px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+      i {
+        font-size: 22px;
+      }
+      .endcall {
+        transform: rotate(135deg);
+        color: red;
+        padding: 15px;
+        border: 1px solid #747373;
+        border-radius: 50%;
+        text-decoration: none;
+        background-color: #504f4f;
+        opacity: 0.8;
+      }
+      .message {
+    padding: 15px;
+    border: 1px solid #747373;
+    border-radius: 50%;
+    background-color: #504f4f;
+    opacity: 0.8;
+    font-size: 22px;
+}
+      a span {
+        font-size: 15px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .ansbuttons {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        padding: 10px 0;
+      }
+      .timebox{
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: row !important;
+      }
+      .timebox .counts{
+        font-size: 17px !important;
+        margin: 0 !important;
+      }  
+      .threebuttons{
+        border: none;
+    border-radius: 50%;
+    padding: 0;
+    color: #fff;
+      }
+      .mutebutton{
+        border: none;
+    border-radius: 50%;
+    padding: 0;
+    color: #fff;
+      }   
+      .fa-microphone{
+        padding: 15px 18px !important;
+      }
+      .fa-microphone-slash{
+        padding: 15px 13px !important;
+      }
+      .popup-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+    background-color: transparent;
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    border-radius:30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    animation: popup 0.2s linear;
+}
+@keyframes popup{
+  0%{
+    transform: translateY(200px);
+  }
+  100%{
+    transform: translateY(-0px);
+  }
+}
+
+/* .cancel{
+  animation: down 0.3s linear;
+}
+@keyframes down{
+  0%{
+    transform: translateY(-0px);
+  }
+  100%{
+    transform: translateY(500px);
+  }
+} */
+.popup .answer {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border: none;
+    color: #927ecf;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.popup button:last-child {
+    margin-bottom: 0;
+}
+.popup textarea{
+  width: 100%;
+  resize: none;
+  height: 50px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.popup textarea:focus{
+  /* border: 1px solid black; */
+}
+.adbutton {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px;
+}
+.adbutton button {
+    margin-right: 10px;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 6px;
+}
+.adbutton button:nth-child(1) {
+    background: #847b7b;
+    color: #fffd;
+    font-weight: 500;
+}
+.adbutton button:nth-child(2){
+  background: var(--main-bg-color) ;
+}
+.adbutton button:nth-child(2) i{
+  color: var(--main-color);
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method=""></form>
+      <div class="row">
+        <div
+          class="col-12 d-flex justify-content-center align-items-center profileimg"
+        >
+          <img src="author3.jpg" alt="" />
+          <span>Caroline Linda</span>
+          <span>Callings audio call</span>
+          <div class="timebox my-2">
+            <span class="counts">11&nbsp;:&nbsp;</span> 
+            <span class="counts">55</span>
+          </div>
+        </div>
+      </div>
+      <div class="row ansbuttons" style="color: #fff">       
+        <div class="col-4 d-flex justify-content-center align-items-center">
+          <div
+            class="d-flex justify-content-center align-items-center threebt"
+            style="flex-direction: column"
+          >
+         <button class="mutebutton">
+          <i class="fa-solid fa-microphone message"></i>
+          <i class="fa-solid fa-microphone-slash message" hidden></i>
+          </button> 
+            <span class="unmute mt-2" hidden>Unmute</span>
+            <span class="mt-2 mute">Mute</span>
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+          <div
+            class="d-flex justify-content-center align-items-center threebt"
+            style="flex-direction: column"
+          >
+            <div
+    
+              class="d-flex justify-content-center align-items-center"
+              style="flex-direction: column; text-decoration: none"
+              >
+              <a href="" class="threebuttons"><i class="fa-solid fa-phone endcall"></i
+                ></a><span class="mt-2" style="font-size: 16px;">Decline</span></div
+            >
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+          <div
+            class="d-flex justify-content-center align-items-center threebt"
+            style="flex-direction: column"
+          >
+           <button class="threebuttons pop"><i class="fa-regular fa-comment-dots message"></i></button> 
+            <span class="mt-2">Message</span>
+          </div>
+        </div>
+        <div class="popup-container ">   
+          <form action="">
+          <div class="popup">
+              <button class="answer">Can't talk now. Whats going on?</button>
+              <button class="answer">I'll call you back</button>
+              <button class="answer">I'll call you later</button>
+              <button class="answer">Can't talk now. Call me later?</button>
+              <div style="display: flex; justify-content:center; align-items: center; width: 100%;">
+                <textarea name="" id="" rows="1" placeholder="Type your own"></textarea>                
+              </div>
+              <div class="adbutton">
+                <button id="calcel" class="">Cancel</button>
+                <button><i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+          </div>
+        </form>       
+      </div>
+
+      </div>
+    </div>
+    <script>
+      // mute button start
+      document.querySelector('.mutebutton').addEventListener('click', function() {
+          var microphoneIcon = document.querySelector('.fa-solid.fa-microphone');
+          var microphoneSlashIcon = document.querySelector('.fa-solid.fa-microphone-slash');
+          var muteSpan = document.querySelector('.mute');
+          var unmuteSpan = document.querySelector('.unmute');
+                 
+          microphoneIcon.hidden = !microphoneIcon.hidden;
+          microphoneSlashIcon.hidden = !microphoneSlashIcon.hidden;
+          
+          
+          muteSpan.hidden = !muteSpan.hidden;
+          unmuteSpan.hidden = !unmuteSpan.hidden;
+      });
+      // end
+
+      // popup container start
+      document.querySelector('.pop').addEventListener('click', function() {
+    document.querySelector('.popup-container').style.display = 'block';
+    document.querySelector('.popup-container').style.bottom = '10px';
+});
+
+document.querySelectorAll('.answer').forEach(function(button) {
+    button.addEventListener('click', function() {
+        console.log('Answer clicked:', this.textContent);
+       
+    });
+});
+
+// end
+document.querySelector('#calcel').addEventListener('click', function(){
+    var popupContainer = document.querySelector('.popup-container');
+    popupContainer.style.display = 'none';    
+});
+
+
+
+
+  </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>
+</html>

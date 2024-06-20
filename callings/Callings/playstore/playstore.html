@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- important links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');        
+        *{
+            background: #fff;;
+        }
+        .content-1 {
+            display: flex;
+            flex-direction: column;
+        }
+        .content-1 h1{
+            font-size: 55px;
+        }
+        .content-1 .span1{
+            font-size: 18px;
+            color: #01875F;
+            font-weight: 500;
+        }
+        .content-1 .span2{ 
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(146, 142, 142);
+        }
+        .content-2 img{ 
+            width: 250px;
+            border-radius: 40px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+        .rating::before {
+            background-color: rgb(232, 234, 237);
+            content: "";
+            display: block;
+            height: 10px;
+            left: 0;
+            position: absolute;
+            top: calc(50% - 12px);
+            width: 1px;
+            }
+        .ratings{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .ratings span:nth-child(1){
+           font-weight: 600; 
+           font-size: 15px;
+           text-align: center;
+                     
+        }
+        .ratings span:nth-child(2){          
+           color: rgb(146, 142, 142);
+        
+        }
+        .checked {
+            color: #01875F;
+            }
+        .Install button{
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #01875F;
+            border: #fff;
+            color: #fff;
+            font-weight: 600;
+        }
+        .Install2 button{
+            width: 100%;
+            padding: 0px;
+            border-radius: 10px;
+            background-color: #fff;
+            border: #fff;
+            color: #01875F;
+            font-weight: 500;
+        }
+        .Install2 button i{
+           font-size: 28px;
+           font-weight: 600;
+        }
+        .Install button:hover{
+           background-color: #066e4f;
+           transition: all 0.3s;
+        }
+        .install3 button{
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .Install2 button{
+           background-color: #fff;
+           transition: all 0.3s;
+        }
+        .Install2 button:hover{
+           background-color: #d8e9e4;
+           transition: all 0.3s;
+        }
+          .Install2 button:hover{
+           background-color: #d8e9e4;
+           transition: all 0.3s;
+        }
+        .aboutheader1{
+            display: flex;
+            align-items: center;
+        }
+        .aboutheader1 i{
+           margin-left: 20px;
+        }
+        .aboutheader1 p{
+           margin-left: 20px;
+           color: rgb(146, 142, 142);
+        }
+        .aboutheader p{
+            color: rgb(119, 116, 116);
+        }
+        #more {display: none;}
+        .updated{
+            display: flex;
+            flex-direction: column;
+        }
+        .updated span:nth-child(1){
+            color: rgb(36, 35, 35);
+            font-weight: 500;
+        }
+        .updated span:nth-child(2){
+            color: rgb(119, 116, 116);
+            font-size: 14px;
+        }
+        .financebutton a{
+            padding: 5px 15px;
+            margin-top: 40px;
+            background-color: transparent;
+            border: 1px solid rgb(230, 224, 224);
+            border-radius: 40px;
+            font-weight: 500;
+            color: rgb(119, 116, 116);
+            text-decoration: none;
+        }
+        .saftybox{
+            margin-bottom: 15px;            
+            color: rgb(119, 116, 116);
+        }
+        .saftybox span{
+           
+        }
+        .saftybox-container a{
+            color: #01875F;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .rvtwo{
+            display: flex;
+            justify-content: end;
+        }
+        .rvtwo button{
+            border: none;
+            left: 0;
+            color: rgb(119, 116, 116);
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .rvtwo button:hover{
+            border: 1px solid rgb(119, 116, 116);
+            border-radius: 10px;
+        }
+        .greenphone{
+            color: #01875F;
+            font-weight: 500;
+            margin: 20px 7px;
+            border: 1px solid white;
+            background: #cdf1e7;
+            padding: 5px 7px;
+            border-radius: 20px;
+            
+        }
+        .greenphone i{
+            margin-right: 10px;
+            background: transparent;
+        }
+       .progressline{
+        display: flex;
+        align-items: center;
+        
+        
+       }
+       .starrating{
+        display: flex;
+        flex-direction: column;  
+        justify-content: center;
+       }
+       .starrating h4{
+        fill: rgb(32, 33, 36);
+    stop-color: rgb(32, 33, 36);
+    font-family: "Google Sans Display", Roboto, Arial, sans-serif;
+    line-height: 4rem;
+    font-size: 3.5rem;
+    letter-spacing: 0;
+    font-weight: 400;      
+       }
+       .starrating .reviewspan{
+        color: rgb(95, 99, 104);
+    fill: rgb(95, 99, 104);
+    stop-color: rgb(95, 99, 104);
+    font-family: Roboto, Arial, sans-serif;
+    line-height: 1rem;
+    font-size: .85rem;
+    letter-spacing: .025em;
+    font-weight: 500;
+    margin-top: .5rem;
+       }
+       .starrating .stars span{
+        font-size: 12px;
+       }
+       .revimg img{
+        width: 80%;
+        height: 36px;
+        border-radius: 50%;
+    
+       }
+       .stars2 {
+        font-size: 10px;
+       }
+       .yesorno{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       }
+       .yesorno button{
+        padding: 3px 15px;
+        background-color: transparent;
+        border: 1px solid rgb(230, 224, 224);
+        border-radius: 40px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgb(119, 116, 116);
+        text-decoration: none;
+       }
+       .yesorno button:hover{
+        color: #01875F;
+        background: #bcf1e2;
+       }
+       .owl-stage{
+        width: 50000px !important;
+       }
+       .owl-item{         
+         margin-right: 10px !important;                 
+         width: 110px !important;
+       }
+       .owl-item img{
+         border-radius: 20px;
+         box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);     
+       }
+       /* .owl-carousel img{
+        width: 100% !important;
+       } */
+       .addwish{
+        color: rgb(146, 142, 142);
+        width: 100%;
+        border: none;
+        color: #01875F;
+        font-weight: 500;
+       }
+       .navbar-shadow {
+        box-shadow: 0 8px 5px -2px rgba(0, 0, 0, 0.2); 
+            transition: box-shadow 0.3s ease;
+            }
+       .googleplay{
+        font-family: Roboto,Arial,sans-serif;
+        color: rgb(95,99,104);
+        letter-spacing: -1px;
+        white-space: nowrap;
+        font-size: 26px;        
+        font-weight: 500;
+       }
+       .navbar {
+    --bs-navbar-padding-y: -0.5rem;
+        }
+        .nav-search i{
+            margin: 0px 10px;
+            color: #545557;
+            font-size: 18px;
+            
+        }
+
+        .nav-search img{
+           border-radius: 50%;
+           width: 32px;
+           height: 32px;
+        }
+        .ratingbox {
+            position: relative;
+            }
+
+    .ratings {
+        position: relative;
+        padding-right: 20px;
+    }
+
+    .ratings:not(:last-child)::after {
+        background-color: rgb(232, 234, 237);
+        content: "";
+        display: block;
+        height: 25px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+        /* mobile */
+        @media only screen and (max-width: 600px) {
+            .content-2 img{ 
+            width: 70px;  
+            height: 70px;                      
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+           }
+           .content-1 h1{ 
+           font-size: 1.5rem;
+           }
+           .ratingbox{
+            margin: 20px 0px;
+           }
+           .Install button{
+            margin-bottom: 10px;
+            padding: 7px;
+           }
+           .aboutheader1{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgb(36, 35, 35);
+          }
+          .aboutheader1 i{
+           margin-right: 20px;  
+         }
+         .safety{
+            display: flex;
+            justify-content: center;
+         }
+         .rvone h5{
+            margin-left: 7px;
+         }
+         .rvtwo{
+            display: flex;
+            justify-content: start;
+        }
+        }
+        /* end */
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-light fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABWVBMVEX///9DhfbqQjU0qFX5uwT2+P5Rj/Y0qFP5uQD/vAA0qFb8//9DhPhEhfXpQzX//v80qU4zqklDg/zwPyrpPC3rQjI0qknuQC8kpEsep1ausyv5zFX5vgDqOjj7tgDpPTbrNCPc7t+o1rOAw45hunVNtGpwvoKRzKDC5srt+PDC4ckipEec0qlEr1/V7957xo5iuHifwesroWd3pPo2pmRglfg2o3A2o3Q2onyz3Lvm8+qYzqE4n4A4n4c4nZCFrTT+1HD//O754Zk6m5r868H98taWsTn6wjI6m6H81n+bsTD84ag6maozq0D6zmf9+uc8l7L3yk362oc8lbv87tC2sis/kr66VYP3bxe2XH/ucCfAVnjEVW/tZCvIUWjOUF7UTVjsVC3cSErfSEXoLRXvj4nvbGL65ef2xsX0rqtZfeHjRUJpetLRwdnpalzxnJbwgXz2urf63NpkY8K+AAAHzUlEQVR4nO2baXvTRhRGPZaKVFtSHC+JU4IRAbOZkLaUshTCXqBtaIA2LW0pm0MSkxLI///QO7KteNEyM4o1Iz/3/AKf573vzGgk53IIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIghw+Rdk/YHIUTyydPNVsNk+fOXtO9m+ZBMVrzXqrblDqdW3lhOzfc+icX24Zmo9htE5OV47FlUE/j3rrwhQ18lyzro0CMS6fl/3DDoli8dS4oCfZOnVR9o87HE63CoGGNMeVaajjtVawX7eO9ezXsRg8on6OdVrHTFsuRRvSUf0607tjcXl0nwiQbJ3JcB0vRrXwYFSNJdk/VJhvvi0xKGpaq5nV3fGS/R2bIuyOmaxj8bJ15Hs2RS2bh9UvjhAOxbq2lLl9AwyJZTN2UdNK2TusUkNQZE2RjmrGdkfPEBSvMCvCc9WZLI1q1xC6yKEIdbwm+3ez0zMkhGNQqWMzM89VviHXoNI6ns5IHX1DULxa0kIeFAMo1OvZOKweGNIU5+JP4YOjWshCHQcMiWVdmeVRhFHNQB0HDSHFG7MGV4yl1sr1XG5GtkUUQ4a0i3wp0ln9Qe3dcdiQWOTqbIHP0agvK13HEUNCyjdm+ULU6LOjwnUcMyTkJl8XgQI8V12XbRLGuCFdbti3RT9GQ9Vbx4AMLesG73KjeYfVs7JlAgkwhC7eFEhR1ZcAgYZeF/kVNSXrGGJo3VwrCMSo1Y0Lqh0AQgxBUWRQqWNJsTqGGRKyKjSodOdQ65oj3JCscj1pDMZYV+nWMcLQEltutO6to2wxnwhDUl6d00QdWwVVbh2jDIm1yn9GPXBU5Joj0pBY97jPqL6hsXDr9h3Zerk4QxhU0S6WFm7pDf2u/LfHMYZW+Z6YIiT4panrjcX7OcnvyGMMASFFKqh7NI4+kOnHYggp8p9ufEFdN83bUkOMNxQY1MLCj74gddR/VtoQUnzEd7oxhgWp48P7Shva1iOeFMcFqaO0OrIY0i6uMSuWggRhxTEf35FSRzZDuwwpsq03xsJPQYLekiOljmyGsN78wjao4YKy6shqSMosikakIHV88mvao8ps6A1qogR7o/o45cMqsyFNcS7uHWqsoJ7+7shhaINi5JNGfIIy6shhSFOM2jRYBemoQh3TupHjMiTl9dAUYZH5ilHQc3yWVh35DAlZD1tuuASp42JKo8prWF5fC9r5jQKnIHV8nMrGwWtIrPXAYzi/ICg+TUOR29Dr4qEI0uN4Cor8hrb1fFSRt4M+jWcqGkKKz0c2DVFBSPE3JQ1Bce7gSaNgLPwuKghVVNOQDA5qEkGY04nvGWKGpLwx2/0GrlBKJAiLjaKGkGK3i8kSpIqqGkKK9EkjYYJ6CmMqbGhbG3OwiiYV1Cd+tSFsCIO6sZZcEM5uChuWN5IL6uYTdQ1t+48/EwsqbGjZ5IV77K/FxIYKT+mLSj6fXFHZlcYmf4PgISiaau4Wtm13BfP54y+TKZqTvq8RNCR9QVBMluKTST8iihjaBASdvmH+2MtFU1iyMfHHJ6EM7X/8BLuKwglO/uAtluGwYDdFMUFz8m8VBW4xxgQ9RSHDxt3JX9TwGtrE/ndM0BtUAceJn2dEDK1Awbxz/CX/nJoTX0dFDANGVHC5Mc0ULtp4Da2gDh6kyLPcmObi5K/Z+A1t+1WYIOdyY+p3iym9DOZ5f0giBekBjnHnN3X6Ijil12schiGLDHcXTf3ogxS/A2N/jx89or0U38RvGo20XqvxGhL7daxgvnbsTcygmql/cspqyJJgN8UoxfS/xOAwfFWpsRjSQdVDdg3TfCrh4zbGr75YRrQHDGpIAR/el/FhG6Ph64HnwfgUGwGDai6mcMoWNuRIMCTF7g6oqiGM6DyPYECKDRkF5DB8y5UgUBtWpN9AyfvSO96w85YzwZEUoYDS7BgMbavD18EeDihK2wG5DAVGdCjFxtPUvyflMoSniXcCI+qn6H2EKPs/s9EZCnWwj/tGgX89RRradhLBantzS7acR1SGHeERzdfc92r4RRomEHTfbcsW8wkztGkH2c+iQ1RrO7K1Bgg1FE5w3t2cUWGF6RNsCAk6Qgk6ChWwR0iGognSAiqUHyXI0BYVrLo7svf3cYIMrc4HkaNalRZQPYIMoYP8fuoVsMeYIYzoB4FFRqUdcJhxQxDk9qtAARVbYHzGDDsV3gSdanVTtkYEo4a7Dtu16AG19vt92RZRDBnaFr+gugXsMZxhh1cQdkDZBnEMGXYYb+59v3kld8BhBg25RtSBHfCT0gXsMWDI2UH3w3ZaL6oT0TeERWa+xm7oVJR6BozCz3CX5yharWwqu8OP0jfc5Qiw1s5EAXv0DGFEmQVdZzsr+VG6hrttZsFKPisF7AGGNnOCTh6OoJkpYI/iZYu9g/QImokdYojLdJtgeZpw6A4o+9eKcIm1g66zo9olExv/VZkEFb2EYWGfZadX/Rkwmo/V+AHNZgH7bLdj/CpZLWCf4vvIEKGAW5n2y83k9t182G6h4GsIIT6HzmnGC3jAnhsYoptX8DWEGMW9gBSr7czugEFs50eWmykp4AAzm1W35q04jreAqn4LKsLW3kfXrVaqrtt2Pk2hn8fW9s7O3s7n/WnqH4IgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIJMJf8DEjsqh4Mss/MAAAAASUVORK5CYII=" width="50" height="50" style="margin-left: 10px;" class="d-inline-block align-top" alt="">
+            <span class="googleplay">Google Play</span>
+        </a>
+        <div class="float-end d-flex align-items-center p-3 nav-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-circle-question"></i>
+            <img src="author1.jpg"  style="margin-left: 10px;" class="d-inline-block align-top" alt="">
+        </div>
+      </nav>
+    <div class="container">       
+        <div class="row" style="margin-top: 5rem;">
+            <div class="col-lg-7 col-md-6 col-9 content-1 order-2 order-md-1 order-lg-1">
+                <h1>
+                    INRSPOT
+                </h1>
+                <span class="span1">Trading and Finance</span>
+                <span class="span2">In-app purchases</span>
+            </div>
+            <div class="col-lg-5 col-md-6 col-3 content-2 d-flex justify-content-center order-1 order-md-1 order-lg-1">
+                <img src="icon3.jpeg" alt="">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-10 d-flex justify-content-between ratingbox mx-2" >
+                <div class="ratings " style="padding-right: 20px;">
+                    <span>4.2 <span>&#9733;</span></span>
+                    <span>1.5k reviews</span>
+                </div>
+                <div class="ratings" style="padding-right: 20px;">
+                    <span>10K+</span>
+                    <span>Downloads</span>
+                </div>
+                <div class="ratings" >
+                    <span style="border: 1px solid black; padding: px;">18+</span>
+                    <span>age</span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6 col-12">
+                <div class="row d-flex">
+                    <div class="col-lg-4 col-12 Install" >
+                        <button>Install</button>
+                    </div>
+                    <div class="col-lg-3 col-6 Install2 d-flex justify-content-center align-items-center">
+                        <button class="d-flex align-items-center justify-content-center"><i class="uil uil-share-alt mx-2" style="background: transparent;"></i><span style="background: transparent;">Share</span></button>
+                    </div>
+                    <div class="col-lg-3 col-6 d-flex justify-content-center align-items-center install3">
+                        <button style="" id="addwish" class="addwish d-flex align-items-center"><i class="uil uil-award-alt"></i>Add to wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="slider-1" class="owl-carousel my-4">            
+                <img src="img1.jpeg" alt="">
+                <img src="img2.jpeg" alt="">
+                <img src="img3.jpeg" alt="">
+                <img src="img4.jpeg" alt="">
+                <img src="img5.jpeg" alt="">
+                <img src="img6.jpeg" alt="">
+                <img src="img6.jpeg" alt="">
+                <img src="img6.jpeg" alt="">
+                <img src="img6.jpeg" alt="">
+                <img src="img6.jpeg" alt="">    
+            </div>
+        <div class="row mt-4 aboutheader">
+            <div class="col-lg-12 aboutheader1">
+                <h5>About this app</h5>
+            </div>
+            <p>INRspot achieves financial goals in a easy Way</p>           
+            <p>
+                INRspot is a trusted and innovative financial platform dedicated to empowering individuals and businesses in their financial journeys. With a comprehensive suite of investment tools, secure trading capabilities, and personalized wealth management services, INRspot provides <span id="dots">...</span><span id="more" style="transition: all 1s ease-in-out;">a one-stop solution for users to grow their wealth and achieve their financial aspirations.
+                Our platform offers a range of investment opportunities across various asset classes, including stocks, cryptocurrencies, mutual funds, commodities, and more. Users can easily explore and diversify their investment portfolios based on their risk tolerance, investment goals, and market preferences.                
+                At INRspot, we prioritize security and transparency, ensuring that user funds and transactions are protected through robust security measures and compliance standards. Our user-friendly interface and intuitive trading platform make it easy for both novice and experienced investors to navigate the financial markets with confidence.
+            </span><span class="mx-1" onclick="myFunction()" id="myBtn" style="color: #01875F; font-weight: 600;">Read more</span></p>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-12">
+                <div class="updated">
+                    <span>Updated on</span>
+                    <span>24 Jan 2024</span>
+                </div>
+            </div>
+            <div class="col-lg-12 col-12">
+                <div class="financebutton mt-4">
+                    <a href="">Finance</a>
+                </div>                
+            </div>
+        </div>
+        <div class="row mt-4 aboutheader">
+            <div class="col-lg-12 aboutheader1">
+                <h5>Data safety</h5>
+            </div>           
+            <p>
+                Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region and age The developer provided this information and may update it over time.
+            </p>
+            
+        </div>
+        <div class="row my-3 safety py-2" style="border: 1px solid #e5ebeb; border-radius: 10px;">
+            <div class="col-lg-12 col-11" >
+                <div class="saftybox-container">
+                    <div class="row saftybox">
+                        <div class="col-lg-1 col-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <i class="uil uil-share-alt" style="font-size: 23px;"></i>
+                        </div>
+                        <div class="col-lg-11 col-11 d-flex align-items-center">
+                            <span>
+                                This app may share these data types with third parties App activity and App info and performance
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row saftybox">
+                        <div class="col-lg-1 col-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <i class="uil uil-cloud-computing" style="font-size: 23px;"></i>
+                        </div>
+                        <div class="col-lg-11 col-11 d-flex align-items-center">
+                            <span>
+                                This app may collect these data types Personal info, Financial info and 3 others
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row saftybox">
+                        <div class="col-lg-1 col-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                           <i class="fa-solid fa-lock" style="font-size: 20px;"></i>
+                        </div>
+                        <div class="col-lg-11 col-11 d-flex align-items-center">
+                            <span>
+                                Data is encrypted in transit
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row saftybox">
+                        <div class="col-lg-1 col-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <i class="uil uil-trash-alt" style="font-size: 23px;"></i>
+                        </div>
+                        <div class="col-lg-11 col-11 d-flex align-items-center">
+                            <span>
+                                You can request that data be deleted
+                            </span>
+                        </div>
+                        <a href="" class="mt-3">See Details</a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">            
+                <div class="col-lg-6 col-md-6 col-12 rvone">
+                    <h5>Ratings and reviews</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 rvtwo my-3">
+                    <button>Ratings and reviews are verified <i class="fa-solid fa-circle-exclamation"></i></button>                    
+                </div>       
+                               
+        </div>
+        <div class="row">
+            <div class="col-12 my-3">
+                <span class="greenphone px-3"><i class="fa-solid fa-mobile-screen"></i>Phone</span>     
+            </div>
+        </div>
+
+        <!-- progress bar -->
+        <div class="row my-3">
+            <div class="col-4 col-lg-4 starrating">
+                <h4>4.2</h4>
+                <div class="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <span class="reviewspan">
+                    85 revies
+                </span>
+            </div>
+            <div class="col-8 col-lg-8">
+                <div class="progressline">
+                    <div class="mx-2" style="color: rgb(119, 116, 116); font-size: 13px; font-weight: 600;">1</div>
+                    <div class="progress" role="progressbar" style="height: 10px; width: 100%;" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar"  style="width: 90%;background-color: #01875F; border-top-right-radius: 50px;border-bottom-right-radius: 50px;"></div>
+                    </div>                    
+                </div>
+                <div class="progressline">
+                    <div class="mx-2" style="color: rgb(119, 116, 116); font-size: 13px; font-weight: 600;">2</div>
+                    <div class="progress" role="progressbar" style="height: 10px; width: 100%;" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar"  style="width: 65%;background-color: #01875F; border-top-right-radius: 50px;border-bottom-right-radius: 50px;"></div>
+                    </div>                    
+                </div>
+                <div class="progressline">
+                    <div class="mx-2" style="color: rgb(119, 116, 116); font-size: 13px; font-weight: 600;">3</div>
+                    <div class="progress" role="progressbar" style="height: 10px; width: 100%;" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar"  style="width: 45%;background-color: #01875F; border-top-right-radius: 50px;border-bottom-right-radius: 50px;"></div>
+                    </div>                    
+                </div>
+                <div class="progressline">
+                    <div class="mx-2" style="color: rgb(119, 116, 116); font-size: 13px; font-weight: 600;">4</div>
+                    <div class="progress" role="progressbar" style="height: 10px; width: 100%;" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar"  style="width: 5%;background-color: #01875F; border-top-right-radius: 50px;border-bottom-right-radius: 50px;"></div>
+                    </div>                    
+                </div>
+                <div class="progressline">
+                    <div class="mx-2" style="color: rgb(119, 116, 116); font-size: 13px; font-weight: 600;">5</div>
+                    <div class="progress" role="progressbar" style="height: 10px; width: 100%;" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar"  style="width: 15%;background-color: #01875F; border-top-right-radius: 50px;border-bottom-right-radius: 50px;"></div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <!-- end -->
+        <div class="row my-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2 revimg d-flex align-items-center justify-content-center" >
+                        <img src="data:image/jpeg;base64,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" alt="">
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <span style="font-size: 16px; font-weight: 500;">Melvin Issac</span>
+                    </div>
+                    <div class="col-2 d-flex align-items-center">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-3" style="display: flex;flex-direction: column;">
+                <div class="d-flex align-items-center my-2">
+                    <div class="stars2">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <span class="mx-2" style="font-size: 14px;color: rgb(119, 116, 116);">29 May 2023</span>
+                </div>               
+                <div>
+                <p style="font-size: 15px;color: rgb(119, 116, 116);">I've struggled with many popular money trackers, and Allo's approach with spending with mindfulness and without judgement is literally life changing. I spend on what I truly value instead of impulsively. As a former shopping addict, this app was absolute gold. Oh yeah and it's pretty and easy to use too.</p>
+                <span style="font-size: 14px;color: rgb(119, 116, 116);">43 people found this review helpful</span>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-size: 14px;color: rgb(119, 116, 116);">Did you find this helpful?</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="yesorno"><button>Yes</button><button>No</button></span>
+                    </div>
+                </div>
+                </div>                
+            </div>
+        </div>
+        <!-- review two -->
+        <div class="row my-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2 revimg d-flex align-items-center justify-content-center" >
+                        <img src="data:image/jpeg;base64,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" alt="">
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <span style="font-size: 16px; font-weight: 500;">Maria Hunter</span>
+                    </div>
+                    <div class="col-2 d-flex align-items-center">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-3" style="display: flex;flex-direction: column;">
+                <div class="d-flex align-items-center my-2">
+                    <div class="stars2">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="mx-2" style="font-size: 14px;color: rgb(119, 116, 116);">29 May 2023</span>
+                </div>               
+                <div>
+                <p style="font-size: 15px;color: rgb(119, 116, 116);">Allo has been super in helping me become more mindful about my money. I love having a weekly cadence of reflection, which keeps me up to date and reduces anxiety the rest of the time. Highly recommend trying it out!</p>
+                <span style="font-size: 14px;color: rgb(119, 116, 116);">73 people found this review helpful</span>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-size: 14px;color: rgb(119, 116, 116);">Did you find this helpful?</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="yesorno"><button>Yes</button><button>No</button></span>
+                    </div>
+                </div>
+                </div>                
+            </div>
+        </div>
+        <!-- end -->
+         <!-- review three -->
+         <div class="row my-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2 revimg d-flex align-items-center justify-content-center" >
+                        <img src="data:image/jpeg;base64,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" alt="">
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <span style="font-size: 16px; font-weight: 500;">Hannah Provost</span>
+                    </div>
+                    <div class="col-2 d-flex align-items-center">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-3" style="display: flex;flex-direction: column;">
+                <div class="d-flex align-items-center my-2">
+                    <div class="stars2">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="mx-2" style="font-size: 14px;color: rgb(119, 116, 116);">29 May 2023</span>
+                </div>               
+                <div>
+                <p style="font-size: 15px;color: rgb(119, 116, 116);">After installing this app, my email was bombarded by scam emails. They all followed the same formula, trying to claim I had 'funds ready for transfer' from bogus email accounts. Beware!! Don't link your credit card, don't use your real email, or, better yet, just don't use this app!</p>
+                <span style="font-size: 14px;color: rgb(119, 116, 116);">55 people found this review helpful</span>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-size: 14px;color: rgb(119, 116, 116);">Did you find this helpful?</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="yesorno"><button>Yes</button><button>No</button></span>
+                    </div>
+                </div>
+                </div>                
+            </div>
+        </div>
+        <!-- end -->
+        <!-- review four -->
+        <div class="row my-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2 revimg d-flex align-items-center justify-content-center" >
+                        <img src="model1.jpg" alt="">
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <span style="font-size: 16px; font-weight: 500;">Domenic Calabrese</span>
+                    </div>
+                    <div class="col-2 d-flex align-items-center">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-3" style="display: flex;flex-direction: column;">
+                <div class="d-flex align-items-center my-2">
+                    <div class="stars2">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="mx-2" style="font-size: 14px;color: rgb(119, 116, 116);">29 May 2023</span>
+                </div>               
+                <div>
+                <p style="font-size: 15px;color: rgb(119, 116, 116);">I tried making an account on the phone but it kept blocking it due to this app not complying with Google security. That makes me feel uneasy about using this app until that gets straightened out.</p>
+                <span style="font-size: 14px;color: rgb(119, 116, 116);">43 people found this review helpful</span>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <span style="font-size: 14px;color: rgb(119, 116, 116);">Did you find this helpful?</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="yesorno"><button>Yes</button><button>No</button></span>
+                    </div>
+                </div>
+                </div>                
+            </div>
+            <a href="" style="text-decoration: none;color: #01875F; font-weight: 500; margin-top: 10px;">See all reviews</a>
+        </div>
+        <!-- end -->
+    </div>
+    
+    
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+
+<script>
+    document.getElementById('addwish').addEventListener('click', function () {
+    const isActive = this.classList.toggle('active');
+    const icon = this.querySelector('i');
+    if (isActive) {
+        this.style.textAlign = 'center';
+        this.innerHTML = '<i class="fa-solid fa-clipboard-check "></i>Remove from wishlist';
+    } else {
+        this.style.textAlign = 'center';
+        this.innerHTML = '<i class="uil uil-award-alt"></i> Add to wishlist';
+    }
+});
+
+</script>
+<script>
+    $('#slider-1').owlCarousel({
+     loop:false,
+     margin: 100,   
+     responsiveClass:true,
+     responsive:{
+         600:{
+             items:2, 
+             loop:false,            
+            //  margin:150                       
+         },      
+         768:{
+             items:3,
+             nav:false,
+             loop:false
+         },
+         1024:{
+             items:6,   
+             margin: 100,                   
+             loop:false
+         },
+         1400:{
+             items:7,   
+             margin: 100,                   
+             loop:false
+         }
+     }
+ })
+   </script>
+<!-- readmore -->
+<script>
+    function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more"; 
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less"; 
+        moreText.style.display = "inline";
+      }
+    }
+    </script>
+<!-- end -->
+
+<!--  -->
+<script>
+    let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        navbar.classList.add('navbar-shadow');
+    } else {
+        // Scrolling up
+        if (scrollTop > 0) { // Only apply shadow if not at the top
+            
+            navbar.classList.remove('navbar-shadow');
+        }
+    }
+    lastScrollTop = scrollTop;
+});
+
+</script>
+
+
+<!--  -->
+</body>
+</html>
