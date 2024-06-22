@@ -119,12 +119,12 @@
     border-radius: 50%;
 }
 .maincontainer {
-    width: 95%;        
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-}
+    width: 100%;        
+    margin: 9rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
 .imagebuttoncontainer {
     width: 100%;
     margin: 0 !important;
@@ -154,6 +154,7 @@
       }
     .card1 {
     width: 90%;
+    position: relative;
     border: 1px solid rgb(238, 233, 233);
     padding: 10px;
     border-radius: 30px;
@@ -200,9 +201,6 @@
 
       /* end */
 
-      @media only screen and (max-width: 390px) {
-      
-      }
       .top-profile i{
     color: var(--main-color);
     font-size: 15px;
@@ -264,7 +262,11 @@
   width: 90%;
   
 }
-
+.target{
+  text-decoration: none;
+  margin: 80px 0 5px 0;
+  color: var(--main-color);
+}
 input[type="range"] {
   -webkit-appearance: none;
   margin: 18px 0;
@@ -376,7 +378,7 @@ input[type="range"]::-ms-thumb {
       .rocket {
     width: 120px;
     position: absolute;
-    top: -11%;
+    top: -5%;
     left: 34%;
     transform: rotate(42deg);
     animation: jump 3s ease-in-out infinite;
@@ -392,11 +394,30 @@ input[type="range"]::-ms-thumb {
         
     }
     100% {
-        transform: translateY(0)rotate(42deg);
+        transform: translateY(0) rotate(42deg);
         
     }
 }
    /* end */
+   
+   @media only screen and (max-width: 375px) {
+    .maincontainer {
+    width: 100%;        
+    margin: 7rem 0 6rem 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rocket {
+    width: 110px;   
+    top: -4%;
+}
+    }
+    .fa-xs {
+    font-size: 1em ;
+    line-height: .08333em;
+    vertical-align: .125em;
+}
     </style>
   </head>
   <body>
@@ -411,34 +432,34 @@ input[type="range"]::-ms-thumb {
      <div class="cardcontainer">        
          <div class="card1">   
             <img src="img/rocket2.png" alt="" class="rocket">    
-
-            <select class="form-select" aria-label="Default select example" style="margin-top: 80px;">
-                <option selected>Select country</option>
+            <a href="targetinterest.html"  class="target d-flex align-items-center" >Target Interests<i class="fa-solid fa-circle-info fa-xs mx-1"></i></a>
+            <select class="form-select" aria-label="Default select example">
+                <option selected disabled>Select country</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>
               <select class="form-select" aria-label="Default select example">
-                <option selected>Select state</option>
+                <option selected disabled>Select state</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>
               <select class="form-select" aria-label="Default select example">
-                <option selected>Select gender</option>
+                <option selected disabled>Select gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Transgender">Transgender</option>
               </select>
               <div class="range-container">
-                <input type="range" id="range" value="1000" min="0" max="10000" />
-                <label for="range" id="volumelabel1">₹ 1000</label>
+                <input type="range" id="range" value="216" min="0" max="1000" />
+                <label for="range" id="volumelabel1">₹ 216</label>
               </div>
               <div class="range-container2">
-                <input type="range" id="range2" value="1000" min="0" max="10000" disabled/>                
+                <input type="range" id="range2" value="216" min="0" max="1000" disabled/>                
               </div>
               <div class="reachbox">
-                <i class="fa-solid fa-users"></i><span class="mx-2 reach" id="reachValue">10000</span><label for="volume" id="volumeLabel1">Reaches</label>
+                <i class="fa-solid fa-users"></i><span class="mx-2 reach" id="reachValue">2160</span><label for="volume" id="volumeLabel1">Reaches</label>
               </div>
         <button class="boost">Boost<i class="fa-solid fa-bolt"></i></button>
          </div>
@@ -468,40 +489,42 @@ input[type="range"]::-ms-thumb {
       });
       </script>
     <script>
-      const range = document.querySelector("#range");
-      const label = range.nextElementSibling;
-    
-      range.addEventListener("input", (e) => {
-        const value = +e.target.value;
-        const rangeWidth = getComputedStyle(e.target).getPropertyValue("width");
-        const labelWidth = getComputedStyle(label).getPropertyValue("width");
-        const numRangeWidth = +rangeWidth.slice(0, rangeWidth.length - 2);
-        const numLabelWidth = +labelWidth.slice(0, labelWidth.length - 2);
-        const max = +e.target.max;
-        const left = value * (numRangeWidth / max) - numLabelWidth / 2;
-        label.style.left = `${left}px`;
-        label.innerText = value;
+   const range = document.querySelector("#range");
+const label = range.nextElementSibling;
+range.addEventListener("input", (e) => {
+  const value = +e.target.value;
+  const rangeWidth = getComputedStyle(e.target).getPropertyValue("width");
+  const labelWidth = getComputedStyle(label).getPropertyValue("width");
+  const numRangeWidth = +rangeWidth.slice(0, rangeWidth.length - 2);
+  const numLabelWidth = +labelWidth.slice(0, labelWidth.length - 2);
+  const max = +e.target.max;
+  const left = value * (numRangeWidth / max) - numLabelWidth / 2;
+  label.style.left = `${left}px`;
+  label.innerText = `₹${value}`;
 
-        e.target.setAttribute('value', value);
-      });
+  e.target.setAttribute('value', value);
+});
+
       </script>
 
  <script>
-  function changeReach() {
-    const volumeInput = document.getElementById('range');
-    const reachSpan = document.getElementById('reachValue');      
-    let value = parseInt(volumeInput.value); // Convert value to integer
+ const range1 = document.querySelector("#range");
+const reachValue = document.querySelector("#reachValue");
 
-    if (value >= 199 && value <= 400) {          
-      reachSpan.textContent = '1000+';
-    } 
-    if (value >= 401 && value <= 600) {          
-      reachSpan.textContent = '10000+';
-    } 
-    else {          
-      reachSpan.textContent = '0';
-    }
+range1.addEventListener("input", (e) => {
+  const value = +e.target.value;
+  const maxReach = 10000;
+  const maxRange = +e.target.max;
+  const newValue = Math.round((maxReach / maxRange) * value);
+
+  const displayedValue = Math.min(newValue, maxReach);
+  reachValue.textContent = displayedValue.toLocaleString(); 
+  
+  const hiddenInput = document.querySelector("#reachHiddenInput");
+  if (hiddenInput) {
+    hiddenInput.value = displayedValue;
   }
+});
 </script>
    
 
