@@ -209,6 +209,18 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.profile-pic img {
+    width: 100px !important;
+    height: 100px !important;
+    top: 140px !important;
+    left: -44px !important;
+}   
+.profile-badge i {
+    top: 140px !important;
+    right: -20px !important;
+    z-index: 2 !important;
+}
+
       }
       .top-profile i{
         color: var(--main-color);
@@ -435,6 +447,42 @@ select {
 
 }
     </style>
+    <style>
+      .profile-badge {
+         display: flex;
+         justify-content: center;
+         position: relative;
+      }
+    
+      .profile-pic {
+          position: relative;     
+          z-index: 1;
+          padding: 20px;
+      }
+    
+      .profile-pic img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px #c1c1c1;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    padding: 2px;
+    border: 2px solid var(--main-color);
+    position: absolute;
+    top: 140px;
+    left: -44px;
+}   
+.profile-badge i {
+    color: var(--main-color);
+    font-size: 27px;
+    position: absolute;
+    top: 140px;
+    right: -36px;
+    z-index: 2;
+}
+    
+    
+    </style>
   </head>
   <body>
     <div class="container" style="">
@@ -447,7 +495,17 @@ select {
     <div class="maincontainer" >
       <form action="">      
       <div class="imagebuttoncontainer" sdtyle="background-image: url('img/croppedimg.png');">
-        <img src="img/modal2.jpg" class="myImg" alt="">       
+        <div class="profile-badge">
+          <div class="profile-pic">
+              <img alt="User Pic" src="img/Previewimg.png"
+                  id="profile-image1" height="200">
+              <input id="profile-image-upload" name="profile_photo" style="display: none" class="hidden"
+                  type="file" onchange="previewFile()">
+              <div style="color:#999;"></div>
+              <i class="fa-solid fa-circle-plus"></i>
+          </div>
+          <span class="invalid-feedback" role="alert" id="error-profile_photo"></span>
+      </div>       
      </div>
      <div id="myModal" class="modal1">
       <span class="close">&times;</span>
@@ -500,13 +558,13 @@ select {
                         <label class="email-label" for="email-input">Mobile </label>
                     </div></div>                
              </div>
-             <div class="cardcontent">
+             <!-- <div class="cardcontent">
                 <div class="login-container">
                     <div class="input-wrapper">
                         <input class="email-input "  type="text"  name="userlocation" autocomplete="username" autocapitalize="none" spellcheck="false" required="" placeholder="">
                         <label class="email-label" for="email-input">Location</label>
                     </div></div>                
-             </div>
+             </div> -->
              <div style="display: flex; justify-content: flex-end;">
               <button style="color: var(--main-color); background-color: var(--main-bg-color); border: none; border-radius: 30px; padding: 7px 15px;font-weight: 500;margin-bottom: 7px;">
                <i class="fa-regular fa-square-check" style="margin-right: 7px;"></i>Update</button>
@@ -566,7 +624,30 @@ select {
                 this.style.borderColor = 'var(--main-color)';
             });
     </script>
-
+  <script>
+    function previewFile() {
+        var preview = document.querySelector('img');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+  
+        reader.addEventListener("load", function() {
+            preview.src = reader.result;
+        }, false);
+  
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+  
+    document.addEventListener("DOMContentLoaded", function() {
+        var profileImage = document.getElementById('profile-image1');
+        var fileInput = document.getElementById('profile-image-upload');
+  
+        profileImage.addEventListener('click', function() {
+            fileInput.click();
+        });
+    });
+  </script>
     <!-- end -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
