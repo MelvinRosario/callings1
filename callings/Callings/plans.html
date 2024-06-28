@@ -107,12 +107,12 @@
         margin-left: 22px;
         margin-bottom: 10px;
       }
-      .top-profile img {      
-    width: 35px;
-    height: 35px;
-    margin-bottom: 10px;
-}
-      
+      .top-profile img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 10px;
+      }
+
       .active {
         color: #5c39c5;
         border: 1px solid #e8e2f2;
@@ -224,20 +224,20 @@
         );
       }
       .accordion-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 8px 11px;
-    font-size: 1rem;
-    color: var(--bs-accordion-btn-color);
-    text-align: left;
-    background-color: var(--bs-accordion-btn-bg);
-    border: none;
-    border-radius: 20px !important;
-    overflow-anchor: none;
-    transition: var(--bs-accordion-transition);
-}
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 8px 11px;
+        font-size: 1rem;
+        color: var(--bs-accordion-btn-color);
+        text-align: left;
+        background-color: var(--bs-accordion-btn-bg);
+        border: none;
+        border-radius: 20px !important;
+        overflow-anchor: none;
+        transition: var(--bs-accordion-transition);
+      }
       .accordion-button:focus {
         z-index: 3;
         outline: 0;
@@ -296,10 +296,10 @@
         margin: 20px auto;
       }
       .accordion-button:not(.collapsed) {
-    color: var(--bs-accordion-active-color);
-    background-color: var(--bs-accordion-active-bg);
-    box-shadow: none !important;
-}
+        color: var(--bs-accordion-active-color);
+        background-color: var(--bs-accordion-active-bg);
+        box-shadow: none !important;
+      }
       .subscribe {
         display: flex;
         justify-content: center;
@@ -325,164 +325,160 @@
         background-color: #fff;
         color: black;
         border: 1px solid #927ecf;
-}
-      .subscribe button  img {
-    width: 45px;
-    height: 45px;
-    margin-bottom: 10px;
-}
-      ol, ul {
-    padding-left: 0rem;
-}
+      }
+      .subscribe button img {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+      }
+      ol,
+      ul {
+        padding-left: 0rem;
+      }
       ul li {
         margin-bottom: 7px;
         list-style: none;
       }
-      ul li::before{
-        content: '👑';
+      ul li::before {
+        content: "👑";
         margin-right: 3px;
-        
       }
-      input [type='radio']{
+      input [type="radio"] {
         color: #5c39c5;
       }
       .activated {
-    position: absolute;
-    right: 0px;
-    border-top-right-radius: 19px;
-    border-bottom-left-radius: 10px;
-    top: -20px;
-    display: inline-block;
-    background-color: green;
-    color: #fff;
-    padding: 10px;
-    
-}
-#animate1 {
-    animation: scaleAnimation 0.7s forwards; 
-  }
+        position: absolute;
+        right: 0px;
+        border-top-right-radius: 19px;
+        border-bottom-left-radius: 10px;
+        top: -20px;
+        display: inline-block;
+        background-color: green;
+        color: #fff;
+        padding: 10px;
+      }
+      #animate1 {
+        animation: scaleAnimation 0.7s forwards;
+      }
 
-  #animate2 {
-    animation: scaleAnimation 0.9s forwards 0.7s; 
-  }
+      #animate2 {
+        animation: scaleAnimation 0.9s forwards 0.7s;
+      }
 
-  #animate3 {
-    animation: scaleAnimation 1.2s forwards 1.7s;  
-  }
+      #animate3 {
+        animation: scaleAnimation 1.2s forwards 1.7s;
+      }
 
-  @keyframes scaleAnimation {
-    0% {
-      transform: scale(0);  
-      opacity: 0;
-    }
-    33% {
-      transform: scale(1.1);  
-      opacity: 1;  
-    }
-    100% {
-      transform: scale(1); 
-      opacity: 1;   
-    }
-  }
+      @keyframes scaleAnimation {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        33% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
 
       @media only screen and (max-width: 390px) {
         .accordion {
-   
-    margin: 20px auto;
-}
-.subscribe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 35px;
-}
-.card_box {
-    width: 90%;
-    background: var(--main-bg-color);
-    position: relative;
-    border-radius: 30px;
-    height: 564px;
-    max-height: 585px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-          rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 0px;    
-    overflow: hidden;
-}
-.accordion-item {
-    color: var(--bs-accordion-color);
-    background-color: var(--bs-accordion-bg);
-    border: var(--bs-accordion-border-width) solid
-          var(--bs-accordion-border-color);
-    margin: 7px 0;
-    padding: 13px 0;
-    border-radius: 20px !important;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-    opacity: 0;
-}
-.activated {
-    position: absolute;
-    right: 0px;
-    border-top-right-radius: 19px;
-    border-bottom-left-radius: 10px;
-    top: -30px;
-    display: inline-block;
-    background-color: green;
-    color: #fff;
-    padding: 10px;
-}
+          margin: 20px auto;
+        }
+        .subscribe {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          padding-top: 35px;
+        }
+        .card_box {
+          width: 90%;
+          background: var(--main-bg-color);
+          position: relative;
+          border-radius: 30px;
+          height: 564px;
+          max-height: 585px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.05) 0px 8px 32px;
+          cursor: pointer;
+          transition: all 0.3s;
+          margin-top: 0px;
+          overflow: hidden;
+        }
+        .accordion-item {
+          color: var(--bs-accordion-color);
+          background-color: var(--bs-accordion-bg);
+          border: var(--bs-accordion-border-width) solid
+            var(--bs-accordion-border-color);
+          margin: 7px 0;
+          padding: 13px 0;
+          border-radius: 20px !important;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+          opacity: 0;
+        }
+        .activated {
+          position: absolute;
+          right: 0px;
+          border-top-right-radius: 19px;
+          border-bottom-left-radius: 10px;
+          top: -30px;
+          display: inline-block;
+          background-color: green;
+          color: #fff;
+          padding: 10px;
+        }
       }
-      @media only screen and (max-width:375px){
-        .card_box{
+      @media only screen and (max-width: 375px) {
+        .card_box {
           height: 393px;
         }
-        .subscribe {  
-    padding-top: 35px;
-}      .subscribe button {  
-    padding: 0px 0;   
-}
-.card_box {
-   
-    height: 404px;
-   
-}
-.accordion-item {   
-    padding: 8px 0;    
-}
-.accordion-body {
-    padding: 5px;
-}
-.card_box {
-    height: 493px;
-    max-height: 655px;
-}
+        .subscribe {
+          padding-top: 35px;
+        }
+        .subscribe button {
+          padding: 0px 0;
+        }
+        .card_box {
+          height: 404px;
+        }
+        .accordion-item {
+          padding: 8px 0;
+        }
+        .accordion-body {
+          padding: 5px;
+        }
+        .card_box {
+          height: 493px;
+          max-height: 655px;
+        }
       }
-      @media only screen and (max-width:375px){        
-          .subscribe {
-    padding-top: 18px;
-}
+      @media only screen and (max-width: 375px) {
+        .subscribe {
+          padding-top: 18px;
         }
+      }
 
-        @media only screen and (max-width:344){
-          .card_box {
-    height: 613px !important;    
-}
-.accordion-item {    
-    margin: 3px 0 !important;
-   
-}
+      @media only screen and (max-width: 344) {
+        .card_box {
+          height: 613px !important;
         }
-    
-        .fa-crown{
-          color: var(--main-color);
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin-left: 10px;
+        .accordion-item {
+          margin: 3px 0 !important;
         }
+      }
+
+      .fa-crown {
+        color: var(--main-color);
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        margin-left: 10px;
+      }
 
       /* end */
     </style>
@@ -497,177 +493,206 @@
     </div>
     <div class="maincontainer">
       <form action="">
-      <div class="container1">
-        <div class="card_box">          
-          <div
-            class="accordion accordion-flush"
-            id="accordionFlushExample"
-            style=""
-          >         
-            <div class="accordion-item" id="animate1">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseOne"
+        <div class="container1">
+          <div class="card_box">
+            <div
+              class="accordion accordion-flush"
+              id="accordionFlushExample"
+              style=""
+            >
+              <div class="accordion-item" id="animate1">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    <input type="radio" name="499" id="" class="radio1" /><span
+                      class="mx-2"
+                      >499</span
+                    ><span>Monthly plan</span>
+                    <span class="activated">Activated</span>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
                 >
-                  <input type="radio" name="499" id="" class="radio1" /><span class="mx-2"
-                    >499</span
-                  ><span>Monthly plan</span>
-                  <span class="activated">Activated</span>
-                </button>
-              </h2>
-              <div
-                id="flush-collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="flush-headingOne"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>
-                      This Plans comes under the pack of
-                      <strong>30 days Validity</strong>
-                    </li>
-                    <li>
-                      Chat with <strong>unlimited person </strong> and Video &
-                      Audio Call
-                    </li>
-                    <li>
-                      Chat with your favorite person using
-                      <strong>Add to chat list</strong>
-                    </li>
-                  </ul>
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        This Plans comes under the pack of
+                        <strong>30 days Validity</strong>
+                      </li>
+                      <li>
+                        Chat with <strong>unlimited person </strong> and Video &
+                        Audio Call
+                      </li>
+                      <li>
+                        Chat with your favorite person using
+                        <strong>Add to chat list</strong>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="accordion-item" id="animate2">
-              <h2 class="accordion-header" id="flush-headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseTwo"
+              <div class="accordion-item" id="animate2">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    <input type="radio" name="299" id="" class="radio2" /><span
+                      class="mx-2"
+                      >299</span
+                    ><span>3 Weeks Plan</span>
+                    <span class="activated" hidden>Active</span>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample"
                 >
-                  <input type="radio" name="299" id="" class="radio2"/><span class="mx-2"
-                    >299</span
-                  ><span>3 Weeks Plan</span>
-                  <span class="activated" hidden>Active</span>
-                </button>
-              </h2>
-              <div
-                id="flush-collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="flush-headingTwo"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>
-                      This Plans comes under the pack of
-                      <strong>20 days Validity</strong>
-                    </li>
-                    <li>
-                      Chat with <strong>50 persons per day </strong> and Video &
-                      Audio Call
-                    </li>
-                    <li>
-                      Chat with your favorite person using
-                      <strong>Add to chat list</strong>
-                    </li>
-                  </ul>
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        This Plans comes under the pack of
+                        <strong>20 days Validity</strong>
+                      </li>
+                      <li>
+                        Chat with <strong>50 persons per day </strong> and Video
+                        & Audio Call
+                      </li>
+                      <li>
+                        Chat with your favorite person using
+                        <strong>Add to chat list</strong>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="accordion-item" id="animate3">
-              <h2 class="accordion-header" id="flush-headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="flush-collapseThree"
+              <div class="accordion-item" id="animate3">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    <input type="radio" name="199" id="" class="radio3" /><span
+                      class="mx-2"
+                      >199</span
+                    ><span>1 Week Plan</span>
+                    <span class="activated" hidden>Active</span>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample"
                 >
-                  <input type="radio" name="199" id="" class="radio3"/><span class="mx-2"
-                    >199</span
-                  ><span>1 Week Plan</span>
-                  <span class="activated" hidden>Active</span>
-                </button>
-              </h2>
-              <div
-                id="flush-collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="flush-headingThree"
-                data-bs-parent="#accordionFlushExample"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>
-                      This Plans comes under the pack of
-                      <strong>13 days Validity</strong>
-                    </li>
-                    <li>
-                      Chat with <strong>30 persons per day </strong> and Video &
-                      Audio Call
-                    </li>
-                    <li>
-                      Chat with your favorite person using
-                      <strong>Add to chat list</strong>
-                    </li>
-                  </ul>
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        This Plans comes under the pack of
+                        <strong>13 days Validity</strong>
+                      </li>
+                      <li>
+                        Chat with <strong>30 persons per day </strong> and Video
+                        & Audio Call
+                      </li>
+                      <li>
+                        Chat with your favorite person using
+                        <strong>Add to chat list</strong>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="subscribe">
-        <button>Subscribe <img src="img/icons8-crown-100.png" alt=""></button>
-      </div> </form>
+        <div class="subscribe">
+          <button>
+            Subscribe <img src="{{ env('APP_URL') }}/assets/img/icons8-crown-100.png" alt="" />
+          </button>
+        </div>
+      </form>
     </div>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
           <div class="ansbuttons">
-            <a href="#"><i class="fa-solid fa-house"></i></a>
-            <a href="#"
-              ><i class="fa-regular fa-comments"><span>10</span></i></a
+            <a href="{{ route('user.home') }}"
+              ><i class="fa-solid fa-house"></i
+            ></a>
+            <a href="{{ route('user.messages') }}"
+              ><i class="fa-regular fa-comments active"><span>10</span></i></a
             >
-            <a href="#"
-              ><i class="fa-regular fa-bell"><span>5</span></i></a
+            <a href="{{ route('user.notification') }}"
+              ><i class="fa-regular fa-bell"
+                ><span id="notificount">5</span></i
+              ></a
             >
-            <a href="#"><i class="fa-solid fa-gear active"></i></a>
+            <a href="{{ route('user.settings')}}"
+              ><i class="fa-solid fa-gear"></i
+            ></a>
           </div>
         </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {        
+        $(".accordion-button").click(function () {          
+          var radio = $(this).find('input[type="radio"]');
+          
+          $('input[type="radio"]').not(radio).prop("checked", false);
+
     
+          radio.prop("checked", !radio.prop("checked"));
+        });
+      });
+    </script>
     <script>
       $(document).ready(function() {
-  // Add click event listener to all accordion buttons
-  $('.accordion-button').click(function() {
-    // Get the radio input inside this accordion item
-    var radio = $(this).find('input[type="radio"]');
-    
-    // Uncheck all other radio inputs
-    $('input[type="radio"]').not(radio).prop('checked', false);
-    
-    // Toggle the clicked radio input
-    radio.prop('checked', !radio.prop('checked'));
-  });
-});
-    </script>
-    
+         function ajaxget() {
+             $.ajax({
+                 type: "GET",
+                 url: "{{ route('user.notification') }}",
+                 dataType: "json",
+                 headers: {
+                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                 },
+                 success: function(response) {
+                     console.log(response);
+                     $('#notificount').text(response.result);
+                 }
+             });
+         }
+         ajaxget();
+     });
+
+   </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
