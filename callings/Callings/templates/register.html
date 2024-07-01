@@ -121,8 +121,20 @@
   right: 0;
   width: 120px;
 }   
-.sm img{
+.sm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sm button{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+}
+button img{
     width: 30px;
+    margin-right: 5px;
 }
 .fa-circle-check {
     position: absolute;
@@ -179,9 +191,8 @@
                         <span class="loginwith">Or login with</span>
                     </div>
                     <div class="d-flex justify-content-around align-items-center sm ">
-                        <a href=""><img src="/callings/Callings/img/google.png" alt=""></a>
-                        <a href=""><img src="/callings/Callings/img/facebook.png" alt=""></a>
-                        <a href=""><img src="/callings/Callings/img/apple.png" alt=""></a>                        
+                        <button ><img src="/callings/Callings/img/google.png" alt=""> Continue With Google</button>
+                                          
                     </div>
                     <div class="d-flex justify-content-center align-items-center mt-5 mb-3">
                         <span class="mx-2" style="color: #8a8888; font-size:15px;">Already have an Account?</span><a style="color: #644de6; font-size:15px; text-decoration: none;" href="">Login</a>
