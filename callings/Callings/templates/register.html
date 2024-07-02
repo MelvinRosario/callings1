@@ -38,6 +38,9 @@
     height: 100%;
     font-family: "poppins";
   }
+  input::placeholder{
+    font-size: 14px;
+  }
 
   .container-fluid {
     background-color: #f7f8fa;
@@ -144,6 +147,17 @@ button img{
     color: #8a8888;
     z-index: 3 !important;
 }
+.heading {
+    display: none;
+ 
+}
+.heading2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #644de6;
+  margin-bottom: 10px;
+}
 @media  only screen and (max-width: 767px){
     .box{
     border: none;
@@ -151,38 +165,61 @@ button img{
     border-radius: 25px;
     box-shadow: none;
 }
+.animation{
+  display: none;
+}
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #644de6;
+    font-size: 22px;
+}
+.heading2{
+  display: none;
+}
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .box{
         width: 500px;
     }
+    .animation{
+  display: none;
+}
   }
 </style>
   </head>
   <body>
     <div class="container vh-100 d-flex justify-content-center align-items-center vw-100">
         <div class="row d-flex justify-content-center align-items-center w-100">
+          <div class="heading2">
+            <h3>Create Account <i class="fa-solid fa-user mx-2"></i></h3>
+          </div>
             <div class="col-12 col-md-6 col-lg-4 g-4 box">
                 <form action="">
+                  <div>
+                    <h3 class="heading">Create Account <i class="fa-solid fa-user mx-2"></i></h3>
+                  </div>
                     <div class="input-container">
                         <span><i class="fa-regular fa-user"></i></span>
-                        <input type="input" name="name" />
+                        <input type="input" name="name" placeholder="Enter your name"/>
                       </div>
 
                       <div class="input-container">
                         <span><i class="fa-regular fa-envelope"></i></span>
-                        <input type="email" name="email" />
+                        <input type="email" name="email" placeholder="Enter your email"/>
                       </div>
 
                      <div class="input-container">
                         <span><i class="fa-solid fa-key"></i></span>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" placeholder="Password"/>
                       </div>
 
                    <div class="input-container">
                         <span><i class="fa-solid fa-key"></i></span>
                         <i class="fa-solid fa-circle-check"></i>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" placeholder="Confirm Password"/>
                       </div>                    
                     <div class="w-100 my-3">
                         <button class="w-100 login">Register</button>
@@ -191,17 +228,21 @@ button img{
                         <span class="loginwith">Or login with</span>
                     </div>
                     <div class="d-flex justify-content-around align-items-center sm ">
-                        <button ><img src="/callings/Callings/img/google.png" alt=""> Continue With Google</button>
-                                          
+                        <button ><img src="/callings/Callings/img/google.png" alt="">Continue With Google</button>                                         
                     </div>
                     <div class="d-flex justify-content-center align-items-center mt-5 mb-3">
                         <span class="mx-2" style="color: #8a8888; font-size:15px;">Already have an Account?</span><a style="color: #644de6; font-size:15px; text-decoration: none;" href="">Login</a>
                     </div>
                 </form>
             </div>
+            <div class="col-md-6 col-12 col-lg-4 animation">
+              <div class="lottie">
+                <lottie-player src="/callings/Callings/img/loginanimation.json" background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop  autoplay></lottie-player>
+              </div>
+            </div>
         </div>
     </div>
-   
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
