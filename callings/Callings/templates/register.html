@@ -139,7 +139,7 @@ button img{
     width: 30px;
     margin-right: 5px;
 }
-.fa-circle-check {
+.kyky{
     position: absolute;
     left: 23px;
     top: 8px;
@@ -158,6 +158,24 @@ button img{
   color: #644de6;
   margin-bottom: 10px;
 }
+.error {
+    font-size: 15px;
+    color: #ed1717;
+    animation: show 2s linear;
+}
+.success {
+    font-size: 15px;
+    color: #018701;
+    animation: show 2s linear;
+}
+@keyframes show{
+  0%{
+    transform: translateY(-1000px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
 @media  only screen and (max-width: 767px){
     .box{
     border: none;
@@ -173,7 +191,7 @@ button img{
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    color: #644de6;
+    color: #6b4de6;
     font-size: 22px;
 }
 .heading2{
@@ -205,12 +223,12 @@ button img{
                         <span><i class="fa-regular fa-user"></i></span>
                         <input type="input" name="name" placeholder="Enter your name"/>
                       </div>
-
+                      <span class="error "><i class="fa-regular fa-circle-xmark mx-2"></i>User name already exist</span>
                       <div class="input-container">
                         <span><i class="fa-regular fa-envelope"></i></span>
                         <input type="email" name="email" placeholder="Enter your email"/>
                       </div>
-
+                      <span class="success"><i class="fa-solid fa-circle-check mx-2"></i>User name already exist</span>
                      <div class="input-container">
                         <span><i class="fa-solid fa-key"></i></span>
                         <input type="password" name="password" placeholder="Password"/>
@@ -218,7 +236,7 @@ button img{
 
                    <div class="input-container">
                         <span><i class="fa-solid fa-key"></i></span>
-                        <i class="fa-solid fa-circle-check"></i>
+                        <i class="fa-solid fa-circle-check kyky"></i>
                         <input type="password" name="password" placeholder="Confirm Password"/>
                       </div>                    
                     <div class="w-100 my-3">
