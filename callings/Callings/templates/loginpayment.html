@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <!-- important links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>      
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+    body, html {
+    height: 100%;
+    font-family: "poppins";
+  }
+  :root{
+    --bg-color : #F6E6CB;
+    --main-color : #153448;
+    --sec-color: #3C5B6F;
+    --ot-color: #948979;
+}
+
+  input::placeholder{
+    font-size: 14px;
+  }
+
+  .input-container {
+        position: relative;
+        display: inline-block;
+        margin: 12px 0;
+        width: 100%;
+      }
+
+      .input-container span {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    font-size: 17px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #8e8e8e;
+}
+
+      .input-container input {
+        padding-left: 40px;
+        height: 50px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #F7F8FA;
+        border: 1px solid #ccc;
+      }
+      .box {
+    /* border: 1px solid #ede8e8; */
+    position: relative;
+    height: 700px;
+    padding: 20px 14px;
+    border-radius: 25px;
+    /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); */
+}
+.fp{
+    color: #8a8888;
+    text-decoration: none;
+    font-size:17px;
+}
+.login{
+    color: #fff;
+    background-color: var(--sec-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.loginwith {
+  color: #8a8888;
+  font-size:15px;
+  padding: 0 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.loginwith::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateX(-100%);
+  height: 1px;
+  background-color: #d1d1d1;
+}
+
+.loginwith::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateX(100%);
+  height: 1px;
+  background-color: #d1d1d1 ;
+}
+
+.loginwith::before {
+  left: 0;
+  width: 120px;
+}
+
+.loginwith::after {
+  right: 0;
+  width: 120px;
+}   
+.sm img{
+    width: 30px;
+}
+.fa-circle-check {
+    position: absolute;
+    left: 25px;
+    top: 8px;
+    font-size: 16px !important;
+    color: #644de6;
+    z-index: 3 !important;
+}
+.heading {
+    display: none;
+ 
+}
+.heading2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #644de6;
+  margin-bottom: 10px;
+}
+.privacy {
+    position: absolute;
+    bottom: 0;
+    padding: 15px 30px !important;
+}
+.animation{
+    position: relative;
+}
+@media  only screen and (max-width: 767px){
+    .box{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: none;
+    position: relative;
+}
+.animation{
+  display: none;
+}
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #644de6;
+    font-size: 22px;
+}
+.heading2{
+  display: none;
+}
+.privacy {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    text-align: center;
+    padding: 15px !important;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .box{
+        width: 500px;
+    }
+    .animation{
+     display: none;
+    }
+  }
+  .privacy {
+    position: absolute;
+    bottom: 0;
+    padding: 15px !important;
+}
+.logimg img {
+    width: 200px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.imgs{
+    width: 30px;
+    position: absolute;
+}
+/* .img1 {
+    top: 10px;
+    width: 100px;
+} */
+.img2 {
+    width: 158px;
+    top: 149px;
+    left: 254px;
+    animation: card2 4s linear infinite;
+}
+@keyframes card2{
+    0%{
+        transform: rotateY(0.5turn);
+    }
+   50%{
+    transform: rotateY(0.10turn);
+
+   }
+    100%{
+        transform: rotateY(0.5turn);
+       
+    }
+}
+.img3 {
+    width: 100px;
+    left: 145px;
+    /* transform: rotate(36deg); */
+    top: 37px;
+    animation: tag 3s linear infinite;
+}
+@keyframes tag{
+    0%{
+        transform: rotate(0deg);
+    }
+   50%{
+    transform: rotate(70deg);
+   }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.img4 {
+    width: 281px;
+    top: 202px;
+    left: 378px;
+    animation: bag 4s linear infinite;
+    
+}
+@keyframes bag{
+    0%{
+        transform: translateY(0px);
+    }
+   50%{
+    transform: translateY(-30px);
+   }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.img5 {
+    width: 156px;
+    top: 0;
+    left: 418px;
+    animation: card 3s linear infinite;
+}
+@keyframes card{
+    0%{
+        transform: scale(1);
+    }
+   50%{
+    transform: scale(1.2);
+   }
+    100%{
+        transform: scale(1);
+    }
+}
+</style>
+  </head>
+  <body>
+    <div class="container vh-100 d-flex justify-content-center align-items-center vw-100">
+        <div class="row d-flex justify-content-center align-items-center w-100">
+            <div class="col-12 col-md-6 col-lg-5 g-4 box">
+                <form action="" style="margin: 10px;">
+                    <!-- <div class="logimg">
+                        <img src="/callings/Callings/img/logo2.png" alt="">
+                    </div> -->
+                    <p>Welcome to <strong style="color: var(--sec-color);">Ecom Payments</strong></p>
+                    <h3 class="mb-3">Get started with your Email</h3>
+                    <div class="input-container">
+                        <span><i class="fa-regular fa-user"></i></span>
+                        <input type="input" name="name" placeholder="Username"/>
+                      </div>
+
+                      <div class="input-container">
+                        <span><i class="fa-solid fa-key"></i></span>
+                        <input type="password" name="password" placeholder="Password"/>
+                      </div> 
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="" style="color: var(--sec-color);font-size: 15px;text-decoration: none;">Forget Password ?</a>
+                    </div>                   
+                    <div class="w-100 my-3">
+                        <button class="w-100 login">Login</button>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center my-4">
+                        <span class="loginwith">Or login with</span>
+                    </div>
+                    <div class="sm w-100">
+                       <button class="btn w-100 border d-flex justify-content-center align-items-center" style="border-radius: 10px;"><img src="/callings/Callings/img/google.png" class="mx-2" alt=""> Continue with Google</button>                      
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+                        <span class="mx-2" style="color: #8a8888; font-size:15px;">Don't have an Account?</span><a style="color: var(--sec-color); font-size:15px; text-decoration: none; " href="">Register</a>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <p class="privacy">By login in you agree to our <a href=""  style="color: var(--sec-color); font-size:15px; text-decoration: none;" href="">privacy policy</a>  and <a href=""  style="color: var(--sec-color); font-size:15px;font-weight: 600; text-decoration: none;" href="">terms</a> of use . . .</p>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 col-12 col-lg-6 animation">
+                <img style="width: 100%;" src="/callings/Callings/img/Desktop - 1.png" alt="">
+                 <img src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Icons/E-Commerce - Color/JPG/Mobile Payment.jpg" alt="" class="imgs img2">            
+                 <img src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Illustrations/PNG/DrawKit-onlineshopping-Illustration-20.png" alt="" class="imgs img3">
+                 <img src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Illustrations/PNG/DrawKit-onlineshopping-Illustration-19.png" alt="" class="imgs img4">
+                 <img src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Illustrations/PNG/DrawKit-onlineshopping-Illustration-18.png" alt="" class="imgs img5">
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
