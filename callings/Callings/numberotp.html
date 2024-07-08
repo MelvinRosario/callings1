@@ -70,7 +70,7 @@
       }
     </style>
     <style>
-        form .input-field {
+  form .input-field {
   flex-direction: row;
   column-gap: 5px;
   width: 100%;
@@ -97,7 +97,6 @@
 }
 form button {
   margin-top: 25px;
-  /* width: 100%; */
   color: #fff;
   font-size: 1rem;
   border: none;
@@ -169,10 +168,10 @@ form button:hover {
                     <span class="mx-2">Check Inbox</span><span> +91 98653 53461</span>
                 </div>           
                 <div class="input-field">
-                  <input class="input" type="number" name='1'/>
-                  <input class="input" type="number" name='2' disabled />
-                  <input class="input" type="number" name='3' disabled />
-                  <input class="input" type="number" name='4' disabled />
+                  <input class="input" type="number" class="input1" name='1'/>
+                  <input class="input" type="number" class="input1" name='2' disabled />
+                  <input class="input" type="number" class="input1"name='3' disabled />
+                  <input class="input" type="number" class="input1" name='4' disabled />
                 </div> 
                 <div style="display: flex;flex-direction: row; align-items: center; margin-top: 20px;">
                   <span >Didn't receive?</span><a href="" style="color: #5c2cef; text-decoration: none; margin-left: 5px;">Resed OTP</a>
@@ -194,8 +193,8 @@ form button:hover {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- otp -->
     <script>
-        const inputs = document.querySelectorAll("input"),
-     button = document.querySelector("button");
+        const inputs = document.querySelectorAll(".input1"),
+        button = document.querySelector("button");
    
    // iterate over all inputs
    inputs.forEach((input, index1) => {

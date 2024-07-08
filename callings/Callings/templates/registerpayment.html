@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- important links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      body,
+      html {
+        height: 100%;
+        font-family: "poppins";
+      }
+      :root {
+        --bg-color: #f6e6cb;
+        --main-color: #153448;
+        --sec-color: #3c5b6f;
+        --ot-color: #948979;
+      }
+
+      input::placeholder {
+        font-size: 14px;
+      }
+
+      .input-container {
+        position: relative;
+        display: inline-block;
+        margin: 12px 0;
+        width: 100%;
+      }
+      .input-container button {
+        position: absolute;
+        right: 7px;
+        border: none;
+        background: var(--sec-color);
+        color: #fff;
+        padding: 8px 10px;
+        top: 5px;
+        border-radius: 10px;
+      }
+      .input-container span {
+        position: absolute;
+        left: 13px;
+        top: 50%;
+        font-size: 17px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #8e8e8e;
+      }
+      .input-container span .fa-location-dot {
+    position: absolute;
+    left: 0px;
+    top: -47px;
+    font-size: 17px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #8e8e8e;
+}
+      input::placeholder {
+        color: gray;
+        font-size: 15px;
+      }
+
+      .input-container input {
+        padding-left: 40px;
+        height: 50px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #f7f8fa;
+        border: 1px solid #ccc;
+      }
+      .input-container select {
+        padding-left: 40px;
+        height: 50px;
+        width: 100%;
+        color: gray;
+        font-size: 15px;
+        border-radius: 10px;
+        background-color: #f7f8fa;
+        border: 1px solid #ccc;
+        appearance: none;
+        -webkit-appearance: none; /* For older versions of Chrome and Safari */
+        -moz-appearance: none;
+      }
+      .input-container textarea {
+    padding-left: 40px;
+    height: 125px;
+    width: 100%;
+    color: gray;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: #f7f8fa;
+    border: 1px solid #ccc;
+    resize: none;
+    text-align: justify;
+    padding-right: 15px;
+    padding-top: 7px;
+}
+      select::-ms-expand {
+        display: none;
+      }
+      .input-container select option {
+        color: gray;
+      }
+      .box {
+        /* border: 1px solid #ede8e8; */
+        position: relative;
+        height: 700px;
+        padding: 20px 14px;
+        border-radius: 25px;
+        /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); */
+      }
+      .fp {
+        color: #8a8888;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .login {
+        color: #fff;
+        background-color: var(--sec-color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .loginwith {
+        color: #8a8888;
+        font-size: 15px;
+        padding: 0 10px;
+        display: inline-block;
+        position: relative;
+      }
+
+      .loginwith::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateX(-100%);
+        height: 1px;
+        background-color: #d1d1d1;
+      }
+
+      .loginwith::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateX(100%);
+        height: 1px;
+        background-color: #d1d1d1;
+      }
+
+      .loginwith::before {
+        left: 0;
+        width: 120px;
+      }
+
+      .loginwith::after {
+        right: 0;
+        width: 120px;
+      }
+      .sm img {
+        width: 30px;
+      }
+      .fa-circle-check {
+        position: absolute;
+        left: 25px;
+        top: 8px;
+        font-size: 16px !important;
+        color: #644de6;
+        z-index: 3 !important;
+      }
+      .heading {
+        display: none;
+      }
+      .heading2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #644de6;
+        margin-bottom: 10px;
+      }
+      .privacy {
+        position: absolute;
+        bottom: 0;
+        padding: 15px 30px !important;
+      }
+      .animation {
+        position: relative;
+      }
+      @media only screen and (max-width: 767px) {
+        .box {
+          border: none;
+          padding: 10px 15px;
+          border-radius: 25px;
+          box-shadow: none;
+          position: relative;
+        }
+        .formbold-step-menu {
+          display: flex;
+          flex-direction: column;
+        }
+        .animation {
+          display: none;
+        }
+        .heading {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+          color: #644de6;
+          font-size: 22px;
+        }
+        .heading2 {
+          display: none;
+        }
+        .privacy {
+          position: absolute;
+          bottom: 0;
+          padding: 15px;
+          text-align: center;
+          padding: 15px !important;
+        }
+        .modal-content {   
+        width: 85% !important;
+      }
+      .modal-body {
+    padding: 18px !important;
+}
+    
+    }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .box {
+          width: 500px;
+        }
+        .animation {
+          display: none;
+        }
+      }
+      .privacy {
+        position: absolute;
+        bottom: 0;
+        padding: 15px !important;
+      }
+      .logimg img {
+        width: 200px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+      }
+      .imgs {
+        width: 30px;
+        position: absolute;
+      }
+      /* .img1 {
+    top: 10px;
+    width: 100px;
+} */
+      .img2 {
+        width: 158px;
+        top: 149px;
+        left: 254px;
+        animation: card2 4s linear infinite;
+      }
+      @keyframes card2 {
+        0% {
+          transform: rotateY(0.5turn);
+        }
+        50% {
+          transform: rotateY(0.1turn);
+        }
+        100% {
+          transform: rotateY(0.5turn);
+        }
+      }
+      .img3 {
+        width: 100px;
+        left: 145px;
+        /* transform: rotate(36deg); */
+        top: 37px;
+        animation: tag 3s linear infinite;
+      }
+      @keyframes tag {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(70deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      .img4 {
+        width: 281px;
+        top: 202px;
+        left: 378px;
+        animation: bag 4s linear infinite;
+      }
+      @keyframes bag {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .img5 {
+        width: 156px;
+        top: 0;
+        left: 418px;
+        animation: card 3s linear infinite;
+      }
+      @keyframes card {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+    <!-- wizard -->
+    <style>
+      .formbold-form-wrapper {
+        margin: 0 auto;
+        width: 100%;
+        background: white;
+      }
+
+      .formbold-steps {
+        padding-bottom: 18px;
+        margin-bottom: 35px;
+        border-bottom: 1px solid #dde3ec;
+      }
+      .formbold-steps ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .formbold-steps li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+      }
+      .formbold-steps li span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dde3ec;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+      }
+      .formbold-steps li.active {
+        color: #07074d;
+      }
+      .formbold-steps li.active span {
+        background: #3c5b6f;
+        color: #ffffff;
+      }
+
+      .formbold-confirm-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ffffff;
+        border: 0.5px solid #dde3ec;
+        border-radius: 5px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        cursor: pointer;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+      }
+      .formbold-confirm-btn {
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+      }
+      .formbold-confirm-btn.active {
+        background: #6a64f1;
+        color: #ffffff;
+      }
+
+      .formbold-form-step-1,
+      .formbold-form-step-2,
+      .formbold-form-step-3 {
+        display: none;
+      }
+      .formbold-form-step-1.active,
+      .formbold-form-step-2.active,
+      .formbold-form-step-3.active {
+        display: block;
+      }
+
+      .formbold-form-btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 25px;
+        margin-top: 25px;
+      }
+      .formbold-back-btn {
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 10px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #3c5b6f;
+        color: white;
+        cursor: pointer;
+        display: none;
+      }
+      .formbold-back-btn.active {
+        display: block;
+      }
+      .formbold-btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 10px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #3c5b6f;
+        color: white;
+        cursor: pointer;
+      }
+      .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+
+    <!-- end -->
+     <!-- modal -->
+     <style>
+         /* moda */
+         .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: 33px;
+    outline: 0;
+}
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 30px 25px;
+}
+      .modal-body i,
+      .modal-body a {
+        color: #5c39c5;
+        text-decoration: none;
+      }
+      .modal-footer {
+        border-top: none;
+      }
+      .modal-footer button {
+        border: none;
+        padding: 6px 24px;
+        margin: 5px;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+      .modal-backdrop {
+        --bs-backdrop-zindex: 1050;
+        --bs-backdrop-opacity: 0.5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--bs-backdrop-zindex);
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--bs-backdrop-bg);
+      }
+form .input-field {
+  flex-direction: row;
+  column-gap: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.input-field input {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.input-field input::-webkit-inner-spin-button,
+.input-field input::-webkit-outer-spin-button {
+  display: none;
+}   
+
+     </style>
+     <!-- end -->
+  </head>
+  <body>
+    <div
+      class="container my-5 d-flex justify-content-center align-items-center vw-100"
+    >
+      <div class="row d-flex justify-content-center align-items-center w-100">
+        <div class="col-12 col-md-6 col-lg-5 g-4 box">
+          <div class="formbold-form-wrapper">
+            <form action="#" method="POST">
+              <div class="formbold-steps">
+                <ul>
+                  <li class="formbold-step-menu1 formbold-step-menu active">
+                    <span>1</span>
+                    Sign Up
+                  </li>
+                  <li class="formbold-step-menu2 formbold-step-menu">
+                    <span>2</span>
+                    Address
+                  </li>
+                  <li class="formbold-step-menu3 formbold-step-menu">
+                    <span>3</span>
+                    Documents
+                  </li>
+                </ul>
+              </div>
+
+              <div class="formbold-form-step-1 active" >
+                <p>
+                  Welcome to
+                  <strong style="color: var(--sec-color)">Ecom Buyer Payments</strong>
+                </p>
+                <h3 class="mb-3">
+                  Get started with your Email & Mobile number
+                </h3>
+                <div class="input-container">
+                  <span><i class="fa-regular fa-user"></i></span>
+                  <input type="text" name="name" placeholder="Full Name" />
+                </div>
+
+                <div class="input-container">
+                  <span><i class="fa-regular fa-building"></i></span>
+                  <input
+                    type="text"
+                    name="businessname"
+                    placeholder="Business Name"
+                  />
+                </div>
+
+                <div class="input-container">
+                  <span><i class="fa-solid fa-list"></i></span>
+                  <select name="" id="">
+                    <option value="" selected disabled>
+                      Business Category
+                    </option>
+                    <option value="">one</option>
+                    <option value="">one</option>
+                    <option value="">one</option>
+                  </select>
+                </div>
+                <div class="input-container">
+                  <span><i class="fa-regular fa-envelope"></i></span>
+                  <input
+                    type="email"
+                    required
+                    name="businessname"
+                    placeholder="Enter your E-mail"
+                  />
+                  <button
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#email"
+                  >
+                    Send OTP
+                  </button>
+                </div>
+                <!-- Modal block-->
+                <div
+                  class="modal fade"
+                  id="email"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div>
+                            <div class="modal-body">
+                                <span style="margin: 10px 0 !important;">We have sent you the Verification Code to your <i class="fa-regular fa-envelope mx-1" style="color: var(--sec-color);"></i> Email</span>
+                                <div class="input-field">
+                                    <input class="input" type="number" id="input1" name='1'/>
+                                    <input class="input" type="number" id="input1" name='2' disabled/>
+                                    <input class="input" type="number" id="input1" name='3' disabled />
+                                    <input class="input" type="number" id="input1" name='4' disabled />
+                                  </div> 
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-secondary"
+                                  data-bs-dismiss="modal" style="background-color: #dde3ec; color: #000;"
+                                >
+                                  No
+                                </button>
+                                <button
+                                id="verifybutton"
+                                  type="submit"
+                                  style="background-color: var(--sec-color); color: #fff"
+                                >
+                                  Verify
+                                </button>
+                              </div>
+                        </div>                      
+                    </div>
+                  </div>
+                </div>
+                <!-- end -->
+
+                <div class="input-container">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <input
+                      type="number"
+                      required
+                      name="businessname"
+                      placeholder="Enter mobile number"
+                    />
+                    <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#mobile"
+                    >
+                      Send OTP
+                    </button>
+                  </div>
+                  <!-- Modal block-->
+                  <div
+                    class="modal fade"
+                    id="mobile"
+                    tabindex="-1"
+                    aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <span style="margin: 10px 0 !important;">We have sent you the Verification Code to your <i style="color: var(--sec-color);" class="fa-solid fa-phone mx-1"></i> Mobile Number</span>
+                          <div class="input-field">
+                              <input class="input" type="number" id="input1"  name='1'/>
+                              <input class="input" type="number" id="input1" name='2' disabled/>
+                              <input class="input" type="number" id="input1" name='3' disabled />
+                              <input class="input" type="number" id="input1" name='4' disabled />
+                            </div> 
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal" style="background-color: #dde3ec; color: #000;"
+                          >
+                            No
+                          </button>
+                          <button
+                          id="verifybutton"
+                            type="button"
+                            style="background-color: var(--sec-color); color: #fff"
+                          >
+                            Verify
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end -->
+              </div>
+
+              <div class="formbold-form-step-2">
+                <p>
+                    Business <strong style="color: var(--sec-color);">Address Information</strong>                    
+                  </p>                
+                  <div class="input-container">
+                    <span><i class="fa-solid fa-location-dot"></i></span>
+                    <Textarea></Textarea>
+                  </div>
+                  
+                  <div class="input-container">
+                    <span><i class="fa-solid fa-map-location-dot"></i></span>
+                    <select name="" id="">
+                        <option value="" selected disabled>
+                          Country
+                        </option>
+                        <option value="">India</option>                        
+                      </select>
+                  </div>
+                  <div class="input-container">
+                    <span><i class="fa-solid fa-map-location"></i></span>
+                    <select name="" id="">
+                        <option value="" selected disabled>
+                          State
+                        </option>
+                        <option value="">Tamilnadu</option>
+                        <option value="">Kerala</option>                
+                      </select>
+                  </div>
+
+                  <div class="input-container">
+                    <span><i class="fa-solid fa-map-location-dot"></i></span>
+                    <select name="" id="">
+                        <option value="" selected disabled>
+                          City
+                        </option>
+                        <option value="">Trichy</option>
+                        <option value="">Chennai</option>                
+                      </select>
+                  </div>
+                  <div class="input-container">
+                    <span><i class="fa-solid fa-location"></i></span>
+                    <input
+                      type="text"
+                      name="pincode"
+                      placeholder="Enter Pincode"
+                    />
+                  </div>
+                  <div class="input-container">
+                    <span><i class="fa-regular fa-address-card"></i></span>
+                    <input
+                      type="text"
+                      name="pan"
+                      placeholder="Enter PAN number"
+                    />
+                  </div>                 
+                  <div class="input-container">
+                    <span><i class="fa-solid fa-globe"></i></span>
+                    <select id="website-select">
+                        <option value="" selected disabled>
+                            Website
+                        </option>
+                        <option value="yes" id="yes">Yes, I do have Website</option>
+                        <option value="no" id="no">No, I don't have Website</option>
+                    </select>
+                </div>
+                <div class="input-container" id="weblink">
+                    <span><i class="fa-solid fa-link"></i></span>
+                    <input type="url" name="link" id="website-url" placeholder="Enter Website URL" />
+                </div>                
+              </div>
+
+              <div class="formbold-form-step-3">
+                
+              </div>
+
+              <div class="formbold-form-btn-wrapper">
+                <button class="formbold-back-btn">Back</button>
+
+                <button class="formbold-btn">Next</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-12 col-lg-6 animation">
+          <img
+            style="width: 100%"
+            src="/callings/Callings/img/Desktop - 1.png"
+            alt=""
+          />
+          <img
+            src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Icons/E-Commerce - Color/JPG/Mobile Payment.jpg"
+            alt=""
+            class="imgs img2"
+          />
+          <img
+            src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Illustrations/PNG/DrawKit-onlineshopping-Illustration-20.png"
+            alt=""
+            class="imgs img3"
+          />
+          <img
+            src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Illustrations/PNG/DrawKit-onlineshopping-Illustration-19.png"
+            alt=""
+            class="imgs img4"
+          />
+          <img
+            src="/callings/Callings/img/resources/DrawKit-OnlineShopping-Ecommerce-Icons-Illustration/DrawKit-Online-Shopping-E-commerce-Vector-Illustrations/PNG/DrawKit-onlineshopping-Illustration-18.png"
+            alt=""
+            class="imgs img5"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      const stepMenuOne = document.querySelector(".formbold-step-menu1");
+      const stepMenuTwo = document.querySelector(".formbold-step-menu2");
+      const stepMenuThree = document.querySelector(".formbold-step-menu3");
+
+      const stepOne = document.querySelector(".formbold-form-step-1");
+      const stepTwo = document.querySelector(".formbold-form-step-2");
+      const stepThree = document.querySelector(".formbold-form-step-3");
+
+      const formSubmitBtn = document.querySelector(".formbold-btn");
+      const formBackBtn = document.querySelector(".formbold-back-btn");
+
+      formSubmitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        if (stepMenuOne.classList.contains("active")) {
+          stepMenuOne.classList.remove("active");
+          stepMenuTwo.classList.add("active");
+
+          stepOne.classList.remove("active");
+          stepTwo.classList.add("active");
+
+          formBackBtn.classList.add("active");
+        } else if (stepMenuTwo.classList.contains("active")) {
+          stepMenuTwo.classList.remove("active");
+          stepMenuThree.classList.add("active");
+
+          stepTwo.classList.remove("active");
+          stepThree.classList.add("active");
+
+          formBackBtn.classList.add("active");
+          formSubmitBtn.textContent = "Submit";
+        } else if (stepMenuThree.classList.contains("active")) {
+          document.querySelector("form").submit();
+        }
+      });
+
+      formBackBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        if (stepMenuTwo.classList.contains("active")) {
+          stepMenuTwo.classList.remove("active");
+          stepMenuOne.classList.add("active");
+
+          stepTwo.classList.remove("active");
+          stepOne.classList.add("active");
+
+          formBackBtn.classList.remove("active");
+        } else if (stepMenuThree.classList.contains("active")) {
+          stepMenuThree.classList.remove("active");
+          stepMenuTwo.classList.add("active");
+
+          stepThree.classList.remove("active");
+          stepTwo.classList.add("active");
+
+          formSubmitBtn.textContent = "Next";
+        }
+      });
+    </script>
+    <!-- otp -->
+   <script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const inputs = document.querySelectorAll("#input1");
+
+    // Add event listeners to all OTP input fields
+    inputs.forEach((input, index) => {
+        input.addEventListener("input", function (e) {
+            const currentInput = e.target;
+
+            // Allow only one digit in each input field
+            if (!/^\d$/.test(currentInput.value)) {
+                currentInput.value = "";
+                return;
+            }
+
+            // Move focus to the next input field
+            if (index < inputs.length - 1) {
+                inputs[index + 1].removeAttribute("disabled");
+                inputs[index + 1].focus();
+            }
+
+            // Enable Verify button when all inputs are filled
+            const verifyButton = document.getElementById("verifybutton");
+            const allFilled = Array.from(inputs).every(input => input.value.trim() !== "");
+            if (allFilled) {
+                verifyButton.classList.add("active");
+            } else {
+                verifyButton.classList.remove("active");
+            }
+        });
+
+        // Handle Backspace to move focus to the previous input field
+        input.addEventListener("keydown", function (e) {
+            if (e.key === "Backspace" && index > 0) {
+                inputs[index].value = "";
+                inputs[index - 1].focus();
+            }
+        });
+    });
+
+    // Set initial focus on the first input field
+    inputs[0].removeAttribute("disabled");
+    inputs[0].focus();
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const websiteSelect = document.getElementById("website-select");
+    const weblinkDiv = document.getElementById("weblink");
+
+    // Initially hide the weblink div
+    weblinkDiv.style.display = "none";
+
+    // Add event listener to the select dropdown
+    websiteSelect.addEventListener("change", function () {
+        const selectedOption = websiteSelect.value;
+
+        if (selectedOption === "yes") {
+            weblinkDiv.style.display = "block";  // Show the weblink div
+        } else {
+            weblinkDiv.style.display = "none";   // Hide the weblink div
+        }
+    });
+});
+
+   </script>
+   <script>
+    AOS.init();
+  </script>
+    <!-- otp end -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

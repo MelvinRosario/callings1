@@ -1,533 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    
-    <!-- important links -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>      
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');      
-      :root {
-      --main-bg-color:  #E8E2F2;
-      --main-color: #927ecf;
-      }
-      body{
-        font-family: "Poppins", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+ 
+    body {
+      font-family: "Inter", sans-serif;
+    }
   
-      .navy {
-    position: fixed !important;
-    top: 12px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    width: 95%;
-    border-radius: 30px;
-    margin: 0 auto;
-    height: 70px;
-    background: var(--main-bg-color);
-}.top-profile {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 0 !important;
-    padding-top: 10px;
-}
-     
-      .ansbuttons {
-    position: fixed;
-    bottom: 12px;
-    margin: 0 auto;
-    width: 95%;
-    height: 70px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--main-bg-color);
-}
-      .ansbuttons a{
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       width: 100%;
-       padding: 17px;
-       color: var(--main-color);
-       text-decoration: none;
-       
-      }
-      .ansbuttons i{
-       font-size: 22px;
-       position: relative;
-       
-      }
-      .ansbuttons span{
-       position: absolute;
-       top: -14px;
-       right: -16px;
-       max-width: 35px;
-       letter-spacing: 1px;
-       background: #fff;
-       padding: 7px 8px;
-       border: 1px solid #cbbff0;
-       color: var(--main-color);
-       border-radius: 50%;
-       font-weight:bold !important;
-       font-size: 10px !important;
-      }
-      .top-profile .Settingsheader {
-    color: var(--main-color);
-    font-size: 25px;
-    margin-left: 22px;
-    margin-bottom: 10px;
-}
-      .top-profile .Settingsicon{
-       font-size: 18px;
-       margin-left: 10px;
-      } 
-      .active {
-    color: #5c39c5;
-    border: 1px solid #e8e2f2;
-    padding: 13px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-.maincontainer {
-    margin: 6rem 0 6rem 0;
-}
-.imagebuttoncontainer {
-    width: 100%;
-    margin: 0 !important;
-    border-radius: 0;
-    height: 215px;
-    background-image: url('img/croppedimg.png');
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-      .imagebuttoncontainer img {
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    top: 70%;
-    border: 2px solid #fff;
-    left: 35%;
-    border-radius: 50%;
-    z-index: 1;
-}
-      .cardcontainer{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-      }
-      .card1{
-        width: 90%;
-        border: 1px solid rgb(238, 233, 233);
-        padding: 10px;
-        border-radius: 30px;
-        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-        animation: animate 1.5s ease-in-out;
-      }
-      @keyframes animate{
-        0%{
-          transform: translateY(400px);
-        }
-        25%{
-          transform: translateY(0px);
-        }
-        50%{
-          transform: translateY(50px);
-        }
-        100%{
-          transform: translateY(0px);
-        }
-      }
-      .cardcontent{
-        /* border-bottom: 1px solid #e6e6eb; */
-        padding-bottom: 10px;
-        margin: 18px 0;
-        margin-left: 15px;
-      }
-      .cardcontent h6{
-        color: #5c39c5;
-        
-      }
-      .fa-ring{
-        transform: rotateX(30deg);
-      }
-      .cardcontent i{
-       color: #927ecf;
-       margin-right: 10px;
-      }
-      .edit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 75px;
-    margin-top: 8px;
-}
-      .edit a{
-        background-color: var(--main-bg-color);
-        padding: 7px 15px;
-        color: var(--main-color);
-        border: none;
-        text-decoration: none;
-        border-radius: 30px;
-        margin-right: 10px;
-        font-weight: 500;
-      }
-    
-
-      /* end */
-
-      @media only screen and (max-width: 390px) {
-      
-       .imagebuttoncontainer {
-    width: 100%;
-    margin: 0 !important;
-    border-radius: 0px;
-    height: 188px;
-    /* background-image: url('img/croppedimg.png'); */
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.boosterloader {
-    top: 118px !important;
-    left: 208px !important;
-}
-
-      }
-      .top-profile i{
-        color: var(--main-color);
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin-left: 10px;
-      }
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-      }
-      .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-      }
-      #caption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        font-size: 25px;
-        max-width: 700px;
-        text-align: center;
-        color: #ccc;
-        padding: 10px 0;
-        height: 150px;
-      }
- /* Add Animation */
- .modal-content,
-      #caption {
-        -webkit-animation-name: zoom;
-        -webkit-animation-duration: 0.6s;
-        animation-name: zoom;
-        animation-duration: 0.6s;
-      }
-
-      @-webkit-keyframes zoom {
-        from {
-          -webkit-transform: scale(0);
-        }
-        to {
-          -webkit-transform: scale(1);
-        }
-      }
-
-      @keyframes zoom {
-        from {
-          transform: scale(0);
-        }
-        to {
-          transform: scale(1);
-        }
-      }
-
-      /* The Close Button */
-      .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      /* end */
-      .fa-solid.fa-bolt {
-    position: absolute;
-    top: 27%;
-    transform: rotate(127deg);
-    left: 20%;
-    background: var(--main-color);
-    color: #fff;
-    font-size: 15px;
-    padding: 7px;
-    border-radius: 50%;
-    z-index: 3;
-}
-
-.boosterloader {
-    transform: rotateZ(45deg);
-    perspective: 1000px;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    color: var(--main-color);
-    position: relative;
-    top: 143px;
-    left: 219px;
-    font-weight: bold;
-    z-index: 3;
-}
-.boosterloader:before,
-.boosterloader:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  transform: rotateX(70deg);
-  animation: 1s spin linear infinite;
-}
-
-.boosterloader:after {
-  color: var(--main-color);
-  transform: rotateY(70deg);
-  animation-delay: .4s;
-}
-
-@keyframes rotate {
-  0% {
-    transform: translate(-50%, -50%) rotateZ(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) rotateZ(360deg);
-  }
-}
-
-@keyframes rotateccw {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) rotate(-360deg);
-  }
-}
-
-@keyframes spin {
-  0%,
-  100% {
-    box-shadow: .2em 0px 0 0px currentcolor;
-  }
-
-  12% {
-    box-shadow: .2em .2em 0 0 currentcolor;
-  }
-
-  25% {
-    box-shadow: 0 .2em 0 0px currentcolor;
-  }
-
-  37% {
-    box-shadow: -.2em .2em 0 0 currentcolor;
-  }
-
-  50% {
-    box-shadow: -.2em 0 0 0 currentcolor;
-  }
-
-  62% {
-    box-shadow: -.2em -.2em 0 0 currentcolor;
-  }
-
-  75% {
-    box-shadow: 0px -.2em 0 0 currentcolor;
-  }
-
-  87% {
-    box-shadow: .2em -.2em 0 0 currentcolor;
-  }
-}
-   
-
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row navy">
-        <div class="col-12 top-profile">
-        <h4 class="Settingsheader">My Account<i class="fa-regular fa-user"></i></h4>      
-        </div>
-      </div>            
-    </div>
-    <div class="maincontainer" >
-      <div class="imagebuttoncontainer" style="background-image: url('img/croppedimg.png');">
-        <img src="img/modal2.jpg" class="myImg" alt="">        
-        <div class="boosterloader" id="container1">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <!-- <div class="container1">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>        
-        </div>       -->
-     </div>
-     <div id="myModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="img01" />
-      <div id="caption"></div>
-    </div>
-     <div class="cardcontainer">
-         <div class="card1">
-          <div class="edit">
-            <div class="cardcontent" style="padding: px 0;">
-              <h6>NAME</h6>
-              <span><i class="fa-solid fa-user"></i> Jerlin Fernandaz</span>
-          </div>
-          <a href=""><i class="fa-solid fa-marker"></i> Edit</a>
-          </div>            
-             <div class="cardcontent">
-                 <h6>DATE OF BIRTH</h6>
-                 <span><i class="fa-solid fa-cake-candles"></i> 17-11-1985</span>
-             </div>
-              <div class="cardcontent">
-                 <h6>STATUS</h6>
-                 <span><i class="fa-solid fa-ring"></i>Single</span>
-             </div>
-             <div class="cardcontent">
-                 <h6>GENDER</h6>
-                 <span><i class="fa-solid fa-venus-mars"></i> Female</span>
-             </div>
-             <div class="cardcontent">
-                 <h6>MOBILE</h6>
-                 <span><i class="fa-solid fa-phone"></i> 9874563210</span>
-             </div>
-             <div class="cardcontent">
-              <h6>LOCATION</h6>
-              <span><i class="fa-solid fa-location-dot"></i> Trichy, TN</span>
-          </div>
-         </div>
-     </div>    
-    </div>
-   
-    
-     
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="ansbuttons">            
-            <a href="#" ><i class="fa-solid fa-house"></i></a>
-            <a href="#" ><i class="fa-regular fa-comments"><span>10</span></i></a>
-            <a href="#" ><i class="fa-regular fa-bell"><span>5</span></i></a>
-            <a href="#" ><i class="fa-solid fa-gear  active"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    </script>
-    <!-- grid images script  -->
-    <script>
-      var modal = document.getElementById("myModal");
-      var modalImg = document.getElementById("img01");
-      var captionText = document.getElementById("caption");
-      var images = document.getElementsByClassName("myImg");
-      var boltIcon = document.querySelector(".fa-bolt");
-      var container1 = document.querySelector("#container1");
-    
-      function hideBoltIcon() {
-        boltIcon.style.display = "none";        
-        container1.style.display = "none";        
-      }
-    
-      function showBoltIcon() {
-        boltIcon.style.display = "block";        
-        container1.style.display = "block";        
-      }
+    .formbold-form-wrapper {
+      margin: 0 auto;
+      width: 100%;
+      background: white;
+    }
   
-      for (var i = 0; i < images.length; i++) {
-        images[i].onclick = function () {
-          hideBoltIcon(); 
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          captionText.innerHTML = this.alt;
-        };
+    .formbold-steps {
+      padding-bottom: 18px;
+      margin-bottom: 35px;
+      border-bottom: 1px solid #DDE3EC;
+    }
+    .formbold-steps ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .formbold-steps li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #536387;
+    }
+    .formbold-steps li span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #DDE3EC;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #536387;
+    }
+    .formbold-steps li.active {
+      color: #07074D;;
+    }
+    .formbold-steps li.active span {
+      background: #3C5B6F;
+      color: #FFFFFF;
+    }
+  
+    .formbold-confirm-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 0.5px solid #DDE3EC;
+      border-radius: 5px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #536387;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: all .3s ease-in-out;
+    }
+    .formbold-confirm-btn {
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+    }
+    .formbold-confirm-btn.active {
+      background: #6A64F1;
+      color: #FFFFFF;
+    }
+  
+    .formbold-form-step-1,
+    .formbold-form-step-2,
+    .formbold-form-step-3 {
+      display: none;
+    }
+    .formbold-form-step-1.active,
+    .formbold-form-step-2.active,
+    .formbold-form-step-3.active {
+      display: block;
+    }
+  
+    .formbold-form-btn-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 25px;
+      margin-top: 25px;
+    }
+    .formbold-back-btn {
+      align-items: center;
+      gap: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 10px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #3C5B6F;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+    .formbold-back-btn.active {
+      display: block;
+    }
+    .formbold-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 10px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #3C5B6F;
+      color: white;
+      cursor: pointer;
+    }
+    .formbold-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+  
+  </style>
+</head>
+<body>
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="formbold-form-wrapper">
+      <form action="https://formbold.com/s/FORM_ID" method="POST">
+          <div class="formbold-steps" >
+              <ul>
+                  <li class="formbold-step-menu1 active">
+                      <span>1</span>
+                      Sign Up
+                  </li>
+                  <li class="formbold-step-menu2">
+                      <span>2</span>
+                      Message
+                  </li>
+                  <li class="formbold-step-menu3">
+                      <span>3</span>
+                      Confirm
+                  </li>
+              </ul>
+          </div>
+  
+          <div class="formbold-form-step-1 active">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi nesciunt cumque nobis, facilis, ab at provident delectus quos ullam accusantium, expedita eius. Quisquam perferendis aperiam voluptates sit nobis facere animi!
+          </div>
+  
+          <div class="formbold-form-step-2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, dignissimos neque quos similique fuga fugiat cumque eaque quo minima atque reprehenderit commodi, ratione voluptates earum, consequuntur in totam odio maiores.
+          </div>
+  
+          <div class="formbold-form-step-3">
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur vel, veritatis facilis optio voluptatibus blanditiis fugiat impedit repellat vitae aliquam ad ipsum ea corrupti accusantium! Ipsam sed quod autem neque?
+          </div>
+  
+          <div class="formbold-form-btn-wrapper">
+            <button class="formbold-back-btn">
+              Back
+            </button>
+  
+            <button class="formbold-btn">
+                Next               
+            </button>
+          </div>
+      </form>
+    </div>
+  <script>
+    const stepMenuOne = document.querySelector('.formbold-step-menu1');
+    const stepMenuTwo = document.querySelector('.formbold-step-menu2');
+    const stepMenuThree = document.querySelector('.formbold-step-menu3');
+  
+    const stepOne = document.querySelector('.formbold-form-step-1');
+    const stepTwo = document.querySelector('.formbold-form-step-2');
+    const stepThree = document.querySelector('.formbold-form-step-3');
+  
+    const formSubmitBtn = document.querySelector('.formbold-btn');
+    const formBackBtn = document.querySelector('.formbold-back-btn');
+  
+    formSubmitBtn.addEventListener("click", function(event){
+      event.preventDefault();
+  
+      if (stepMenuOne.classList.contains('active')) {
+        stepMenuOne.classList.remove('active');
+        stepMenuTwo.classList.add('active');
+  
+        stepOne.classList.remove('active');
+        stepTwo.classList.add('active');
+  
+        formBackBtn.classList.add('active');
+      } else if (stepMenuTwo.classList.contains('active')) {
+        stepMenuTwo.classList.remove('active');
+        stepMenuThree.classList.add('active');
+  
+        stepTwo.classList.remove('active');
+        stepThree.classList.add('active');
+  
+        formBackBtn.classList.add('active');
+        formSubmitBtn.textContent = 'Submit';
+      } else if (stepMenuThree.classList.contains('active')) {
+        document.querySelector('form').submit();
       }
-    
-      var span = document.getElementsByClassName("close")[0];
-      span.onclick = function () {
-        showBoltIcon(); 
-        modal.style.display = "none";
-      };
-    </script>
-    
-
-    <!-- end -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    });
+  
+    formBackBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+  
+      if (stepMenuTwo.classList.contains('active')) {
+        stepMenuTwo.classList.remove('active');
+        stepMenuOne.classList.add('active');
+  
+        stepTwo.classList.remove('active');
+        stepOne.classList.add('active');
+  
+        formBackBtn.classList.remove('active');
+      } else if (stepMenuThree.classList.contains('active')) {
+        stepMenuThree.classList.remove('active');
+        stepMenuTwo.classList.add('active');
+  
+        stepThree.classList.remove('active');
+        stepTwo.classList.add('active');
+  
+        formSubmitBtn.textContent = 'Next';
+      }
+    });
+  
+  </script>
+  
+</body>
 </html>
