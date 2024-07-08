@@ -42,6 +42,9 @@
         height: 100%;
         font-family: "poppins";
       }
+      .main-container{
+        margin:  auto;
+      }
       :root {
         --bg-color: #f6e6cb;
         --main-color: #153448;
@@ -256,11 +259,14 @@
       .modal-body {
     padding: 18px !important;
 }
+.main-container{
+        margin: 0rem auto 5rem auto !important;
+      }
     
     }
       @media only screen and (min-width: 768px) and (max-width: 1024px) {
         .box {
-          width: 500px;
+          width: 500px;                   
         }
         .animation {
           display: none;
@@ -551,15 +557,71 @@ form .input-field {
 .input-field input::-webkit-outer-spin-button {
   display: none;
 }   
+.nav-tab {
+  color: var(--sec-color); /* default color */
+  cursor: pointer;
+  z-index: 2;
+}
 
+.nav-tab.active1 {
+  color: #fff; /* active color */
+}
+.personal-container,.business-container {
+  display: none;
+}
+
+.personal-container.active,.business-container.active {
+  display: block;
+}
+.moving-tab {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 44px;
+    border-radius: 15px;
+    z-index: 0;
+    background-color: var(--sec-color);
+    transition: left 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.active1 ~ .moving-tab {
+  left: 0;
+}
+
+#business.active1 ~ .moving-tab {
+  left: 50%;
+}
+
+.input-container input[type=file] {
+  /* Hide default "Choose File" text */
+  padding-left: 40px;
+    height: 50px;
+    width: 100%;
+    color: gray;
+    border-radius: 10px;
+    background-color: #f7f8fa;
+    border: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.input-container input[type=file]::file-selector-button {
+  
+    display: none;
+}
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
      </style>
      <!-- end -->
   </head>
   <body>
     <div
-      class="container my-5 d-flex justify-content-center align-items-center vw-100"
+      class="container d-flex justify-content-center align-items-center vw-100"
     >
-      <div class="row d-flex justify-content-center align-items-center w-100">
+      <div class="row d-flex justify-content-center align-items-center w-100  main-container ">
         <div class="col-12 col-md-6 col-lg-5 g-4 box">
           <div class="formbold-form-wrapper">
             <form action="#" method="POST">
@@ -648,6 +710,12 @@ form .input-field {
                                     <input class="input" type="number" id="input1" name='3' disabled />
                                     <input class="input" type="number" id="input1" name='4' disabled />
                                   </div> 
+                                  <div style="display: flex;flex-direction: row; align-items: center;justify-content: center; margin-top: 20px;margin-bottom: -20px;">
+                                    <span id="didnt">Didn't receive?</span><span id="sent" style="display: none;">OTP sent . . .</span><a id="resendLink" href="#" style="color: var(--sec-color); text-decoration: none; margin-left: 5px;">Resend OTP</a>
+                                    <div id="resendTimer" style="color: var(--sec-color); text-decoration: none; margin-left: 5px; display: none;">
+                                      <span id="timer" class="mx-1">30</span> <span>Seconds</span>
+                                    </div>                                                    
+                              </div>
                               </div>
                               <div class="modal-footer">
                                 <button
@@ -705,6 +773,12 @@ form .input-field {
                               <input class="input" type="number" id="input1" name='3' disabled />
                               <input class="input" type="number" id="input1" name='4' disabled />
                             </div> 
+                            <div style="display: flex;flex-direction: row; align-items: center;justify-content: center; margin-top: 20px;margin-bottom: -20px;">
+                              <span id="didnt2">Didn't receive?</span><span id="sent2" style="display: none;">OTP sent . . .</span><a id="resendLink2" href="#" style="color: var(--sec-color); text-decoration: none; margin-left: 5px;">Resend OTP</a>
+                              <div id="resendTimer2" style="color: var(--sec-color); text-decoration: none; margin-left: 5px; display: none;">
+                                <span id="timer2" class="mx-1">30</span> <span>Seconds</span>
+                              </div>                                                    
+                        </div>
                         </div>
                         <div class="modal-footer">
                           <button
@@ -800,13 +874,151 @@ form .input-field {
               </div>
 
               <div class="formbold-form-step-3">
+                <p style="margin-bottom: 15px;"><strong style="color: var(--sec-color);">Personal</strong> / <strong style="color: var(--sec-color);">Business</strong> Documents</p>
+                <div class="col-12 my-4" id="twotabs" style="display: flex; justify-content: space-around; align-items: center; position: relative;">
+                  <label id="personal" class="nav-tab active1" for="personalCheckbox">
+                    <input type="checkbox" id="personalCheckbox" name="personal">
+                    <i class="fa-solid fa-user-tie" style="margin-right: 7px;"></i>Personal
+                  </label>
+                  <label id="business" class="nav-tab">
+                    <input type="checkbox" id="businessCheckbox" name="business">
+                    <i class="fa-solid fa-briefcase" style="margin-right: 7px;"></i>Business
+                  </label>
+                  <div class="moving-tab"></div>
+                </div>
                 
+                <div class="form-container">
+                  <div class="personal-container" id="personal-container">
+                    <!-- aadhar -->
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-fingerprint"></i></span>
+                      <input
+                        type="text"
+                        name="personalaadhar"
+                        placeholder="Enter Aadhar number"
+                      />
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <label for="">Upload Aadhar Front</label>
+                        <div class="input-container">
+                          <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                          <input
+                            type="file"
+                            name="aadharfront"                        
+                          />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label for="">Upload Aadhar Back</label>
+                        <div class="input-container">
+                          <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                          <input
+                            type="file"
+                            name="aadharback"                        
+                          />
+                        </div>
+                      </div>
+                    </div>                   
+                    <!-- pan -->
+                    <div class="input-container">
+                      <span><i class="fa-regular fa-address-card"></i></span>
+                      <input
+                        type="text"
+                        name="personalpan"
+                        placeholder="Enter PAN number"
+                      />
+                    </div>
+                    <label for="">(Upload your PAN copy)</label>
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                      <input
+                        type="file"
+                        name="panfile"                        
+                      />
+                    </div>
+                    <!-- gst -->
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-percent"></i></span>
+                      <input
+                        type="text"
+                        name="personalgst"
+                        placeholder="Enter GST number"
+                      />
+                    </div>
+                    <label for="">(Upload your GST Certificate copy)</label>
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                      <input
+                        type="file"
+                        name="gstfile"                        
+                      />
+                    </div>
+                    <!-- gst end -->
+                  </div>
+                  <div class="business-container" id="business-container">
+                    <!-- Busniess name -->
+                    <div class="input-container">
+                      <span><i class="fa-regular fa-building"></i></span>
+                      <input
+                        type="text"
+                        name="Businessname"
+                        placeholder="Enter Business name"
+                      />
+                    </div>                    
+                    <!--Business pan -->
+                    <div class="input-container">
+                      <span><i class="fa-regular fa-address-card"></i></span>
+                      <input
+                        type="text"
+                        name="businesspan"
+                        placeholder="Enter Business PAN number"
+                      />
+                    </div>
+                    <label for="">(Upload your PAN copy)</label>
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                      <input
+                        type="file"
+                        name="businesspanfile"                        
+                      />
+                    </div>
+                    <!-- gst -->
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-percent"></i></span>
+                      <input
+                        type="text"
+                        name="businessgst"
+                        placeholder="Enter Business GST number"
+                      />
+                    </div>
+                    <label for="">(Upload your GST Certificate copy)</label>
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                      <input
+                        type="file"
+                        name="businessgstfile"                        
+                      />
+                    </div>
+                    <!-- gst -->
+                     <!-- business certificate -->                    
+                    <label for="">(Upload your Business Certificate copy)</label>
+                    <div class="input-container">
+                      <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                      <input
+                        type="file"
+                        name="businesscertificatefile"                        
+                      />
+                    </div>
+                    <!-- gst -->
+                  </div>
+                </div>
               </div>
 
               <div class="formbold-form-btn-wrapper">
-                <button class="formbold-back-btn">Back</button>
+                <button class="formbold-back-btn mb-3">Back</button>
 
-                <button class="formbold-btn">Next</button>
+                <button class="formbold-btn mb-3">Next</button>
               </div>
             </form>
           </div>
@@ -964,11 +1176,101 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
    </script>
-   <script>
-    AOS.init();
-  </script>
     <!-- otp end -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.nav-tab');
+        const personalCheckbox = document.getElementById('personalCheckbox');
+        const businessCheckbox = document.getElementById('businessCheckbox');
+        const personalContainer = document.getElementById('personal-container');
+        const businessContainer = document.getElementById('business-container');
+              
+        personalContainer.classList.add('active');
+      
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            tabs.forEach((t) => t.classList.remove('active1'));
+            tab.classList.add('active1');
+      
+            if (tab.id === 'personal') {
+              personalCheckbox.checked = true;
+              businessCheckbox.checked = false;
+              personalContainer.classList.add('active');
+              businessContainer.classList.remove('active');
+            } else if (tab.id === 'business') {
+              businessCheckbox.checked = true;
+              personalCheckbox.checked = false;
+              businessContainer.classList.add('active');
+              personalContainer.classList.remove('active');
+            }
+          });
+        });
+      
+        
+        personalCheckbox.checked = true;
+        businessCheckbox.checked = false;
+      });
+      </script>
+      
+       <!--email otp -->
+      <script>
+        document.getElementById('resendLink').addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default behavior of anchor tag
+          document.getElementById('resendLink').style.display = 'none'; 
+          document.getElementById('didnt').style.display = 'none'; 
+          document.getElementById('sent').style.display = 'flex'; 
+          document.getElementById('resendTimer').style.display = 'flex';
+          startTimer(); 
+        });
+        
+        // Countdown timer logic
+        function startTimer() {
+          let timer = 30; 
+          const countdown = setInterval(() => {
+            timer--;
+            document.getElementById('timer').textContent = timer;
+        
+            if (timer <= 0) {
+              clearInterval(countdown); // Stop the countdown
+              document.getElementById('resendLink').style.display = 'flex'; 
+              document.getElementById('didnt').style.display = 'flex'; 
+              document.getElementById('sent').style.display = 'none';
+              document.getElementById('resendTimer').style.display = 'none';
+            }
+          }, 1000); // Update every second
+        }
+        
+             </script>
+             <!-- number otp -->
+              <script>
+                document.getElementById('resendLink2').addEventListener('click', function(e) {
+                  e.preventDefault(); // Prevent default behavior of anchor tag
+                  document.getElementById('resendLink2').style.display = 'none'; 
+                  document.getElementById('didnt2').style.display = 'none'; 
+                  document.getElementById('sent2').style.display = 'flex'; 
+                  document.getElementById('resendTimer2').style.display = 'flex';
+                  startTimer2(); 
+                });
+                
+                // Countdown timer logic
+                function startTimer2() {
+                  let timer = 30; 
+                  const countdown = setInterval(() => {
+                    timer--;
+                    document.getElementById('timer2').textContent = timer;
+                
+                    if (timer <= 0) {
+                      clearInterval(countdown); // Stop the countdown
+                      document.getElementById('resendLink2').style.display = 'flex'; 
+                      document.getElementById('didnt2').style.display = 'flex'; 
+                      document.getElementById('sent2').style.display = 'none';
+                      document.getElementById('resendTimer2').style.display = 'none';
+                    }
+                  }, 1000); // Update every second
+                }
+                
+                     </script>
+             
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

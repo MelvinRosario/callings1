@@ -1,244 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
- 
-    body {
-      font-family: "Inter", sans-serif;
-    }
-  
-    .formbold-form-wrapper {
-      margin: 0 auto;
-      width: 100%;
-      background: white;
-    }
-  
-    .formbold-steps {
-      padding-bottom: 18px;
-      margin-bottom: 35px;
-      border-bottom: 1px solid #DDE3EC;
-    }
-    .formbold-steps ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      display: flex;
-      gap: 40px;
-    }
-    .formbold-steps li {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      color: #536387;
-    }
-    .formbold-steps li span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #DDE3EC;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      color: #536387;
-    }
-    .formbold-steps li.active {
-      color: #07074D;;
-    }
-    .formbold-steps li.active span {
-      background: #3C5B6F;
-      color: #FFFFFF;
-    }
-  
-    .formbold-confirm-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #FFFFFF;
-      border: 0.5px solid #DDE3EC;
-      border-radius: 5px;
-      font-size: 16px;
-      line-height: 24px;
-      color: #536387;
-      cursor: pointer;
-      padding: 10px 20px;
-      transition: all .3s ease-in-out;
-    }
-    .formbold-confirm-btn {
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
-    }
-    .formbold-confirm-btn.active {
-      background: #6A64F1;
-      color: #FFFFFF;
-    }
-  
-    .formbold-form-step-1,
-    .formbold-form-step-2,
-    .formbold-form-step-3 {
-      display: none;
-    }
-    .formbold-form-step-1.active,
-    .formbold-form-step-2.active,
-    .formbold-form-step-3.active {
-      display: block;
-    }
-  
-    .formbold-form-btn-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 25px;
-      margin-top: 25px;
-    }
-    .formbold-back-btn {
-      align-items: center;
-      gap: 5px;
-      font-size: 16px;
-      border-radius: 5px;
-      padding: 10px 25px;
-      border: none;
-      font-weight: 500;
-      background-color: #3C5B6F;
-      color: white;
-      cursor: pointer;
-      display: none;
-    }
-    .formbold-back-btn.active {
-      display: block;
-    }
-    .formbold-btn {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 16px;
-      border-radius: 5px;
-      padding: 10px 25px;
-      border: none;
-      font-weight: 500;
-      background-color: #3C5B6F;
-      color: white;
-      cursor: pointer;
-    }
-    .formbold-btn:hover {
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-    }
-  
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-file Uploader with Animation</title>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.uploader {
+  text-align: center;
+}
+
+#fileInput {
+  display: none;
+}
+
+.upload-label {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+  background-color: #45a049;
+}
+
+.file-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.file-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
 </head>
 <body>
-    <!-- Author: FormBold Team -->
-    <!-- Learn More: https://formbold.com -->
-    <div class="formbold-form-wrapper">
-      <form action="https://formbold.com/s/FORM_ID" method="POST">
-          <div class="formbold-steps" >
-              <ul>
-                  <li class="formbold-step-menu1 active">
-                      <span>1</span>
-                      Sign Up
-                  </li>
-                  <li class="formbold-step-menu2">
-                      <span>2</span>
-                      Message
-                  </li>
-                  <li class="formbold-step-menu3">
-                      <span>3</span>
-                      Confirm
-                  </li>
-              </ul>
-          </div>
-  
-          <div class="formbold-form-step-1 active">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi nesciunt cumque nobis, facilis, ab at provident delectus quos ullam accusantium, expedita eius. Quisquam perferendis aperiam voluptates sit nobis facere animi!
-          </div>
-  
-          <div class="formbold-form-step-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, dignissimos neque quos similique fuga fugiat cumque eaque quo minima atque reprehenderit commodi, ratione voluptates earum, consequuntur in totam odio maiores.
-          </div>
-  
-          <div class="formbold-form-step-3">
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur vel, veritatis facilis optio voluptatibus blanditiis fugiat impedit repellat vitae aliquam ad ipsum ea corrupti accusantium! Ipsam sed quod autem neque?
-          </div>
-  
-          <div class="formbold-form-btn-wrapper">
-            <button class="formbold-back-btn">
-              Back
-            </button>
-  
-            <button class="formbold-btn">
-                Next               
-            </button>
-          </div>
-      </form>
-    </div>
-  <script>
-    const stepMenuOne = document.querySelector('.formbold-step-menu1');
-    const stepMenuTwo = document.querySelector('.formbold-step-menu2');
-    const stepMenuThree = document.querySelector('.formbold-step-menu3');
-  
-    const stepOne = document.querySelector('.formbold-form-step-1');
-    const stepTwo = document.querySelector('.formbold-form-step-2');
-    const stepThree = document.querySelector('.formbold-form-step-3');
-  
-    const formSubmitBtn = document.querySelector('.formbold-btn');
-    const formBackBtn = document.querySelector('.formbold-back-btn');
-  
-    formSubmitBtn.addEventListener("click", function(event){
-      event.preventDefault();
-  
-      if (stepMenuOne.classList.contains('active')) {
-        stepMenuOne.classList.remove('active');
-        stepMenuTwo.classList.add('active');
-  
-        stepOne.classList.remove('active');
-        stepTwo.classList.add('active');
-  
-        formBackBtn.classList.add('active');
-      } else if (stepMenuTwo.classList.contains('active')) {
-        stepMenuTwo.classList.remove('active');
-        stepMenuThree.classList.add('active');
-  
-        stepTwo.classList.remove('active');
-        stepThree.classList.add('active');
-  
-        formBackBtn.classList.add('active');
-        formSubmitBtn.textContent = 'Submit';
-      } else if (stepMenuThree.classList.contains('active')) {
-        document.querySelector('form').submit();
-      }
-    });
-  
-    formBackBtn.addEventListener("click", function(event) {
-      event.preventDefault();
-  
-      if (stepMenuTwo.classList.contains('active')) {
-        stepMenuTwo.classList.remove('active');
-        stepMenuOne.classList.add('active');
-  
-        stepTwo.classList.remove('active');
-        stepOne.classList.add('active');
-  
-        formBackBtn.classList.remove('active');
-      } else if (stepMenuThree.classList.contains('active')) {
-        stepMenuThree.classList.remove('active');
-        stepMenuTwo.classList.add('active');
-  
-        stepThree.classList.remove('active');
-        stepTwo.classList.add('active');
-  
-        formSubmitBtn.textContent = 'Next';
-      }
-    });
-  
-  </script>
-  
+<div class="uploader">
+  <input type="file" id="fileInput" multiple>
+  <label for="fileInput" class="upload-label">Choose files</label>
+  <ul class="file-list"></ul>
+</div>
+<script>
+  document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+function handleFileSelect(event) {
+  const files = event.target.files;
+  const fileList = document.querySelector('.file-list');
+
+  fileList.innerHTML = ''; // Clear existing list
+
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    const listItem = document.createElement('li');
+    listItem.className = 'file-item';
+    listItem.textContent = file.name;
+
+    fileList.appendChild(listItem);
+  }
+}
+
+</script>
 </body>
 </html>
