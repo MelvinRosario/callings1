@@ -652,7 +652,7 @@ input[type=checkbox] {
                 </h3>
                 <div class="input-container">
                   <span><i class="fa-regular fa-user"></i></span>
-                  <input type="text" name="name" placeholder="Full Name" />
+                  <input type="text" name="name" placeholder="Full Name" required/>
                 </div>
 
                 <div class="input-container">
@@ -661,6 +661,7 @@ input[type=checkbox] {
                     type="text"
                     name="businessname"
                     placeholder="Business Name"
+                    required
                   />
                 </div>
 
@@ -818,8 +819,9 @@ input[type=checkbox] {
                           Country
                         </option>
                         <option value="">India</option>                        
-                      </select>
+                      </select>                      
                   </div>
+                  
                   <div class="input-container">
                     <span><i class="fa-solid fa-map-location"></i></span>
                     <select name="" id="">
@@ -1016,9 +1018,9 @@ input[type=checkbox] {
               </div>
 
               <div class="formbold-form-btn-wrapper">
-                <button class="formbold-back-btn mb-3">Back</button>
+                <button  class="formbold-back-btn mb-3">Back</button>
 
-                <button class="formbold-btn mb-3">Next</button>
+                <button type="button" class="formbold-btn mb-3">Next</button>
               </div>
             </form>
           </div>
